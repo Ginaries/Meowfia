@@ -1,11 +1,34 @@
-~ start
-Michita: Hola como estas? [shake rate=20 level=10]queres 3 pescaditos?[/shake]
-Gato: Hola...
+~ Introduccion
+Gatita Misteriosa: Uhm... ¿Quién eres?
+Gatita Misteriosa: Parece que no eres de por aquí.
+Gato: ...
+Gato: Hola... Mi nombre es XXXX
+Gato: Solo sé que desperté aquí, ¿podrías decirme donde estoy?...
+Gatita Misteriosa: Te encuentras en el mundo de "Meowfia". 
+
+~ Tutorial_Barra_de_Hambre
+Gatita Misteriosa: Se nota que tienes hambre. ¿Por qué no tomas este [shake rate=20 level=10]pescado[/shake]?
 - Tomar pescado
-	Michita: Gracias
+	Gato: Gracias...
+	Gatita Misteriosa: Te ayudarán a mantenerte vivo. => Tutorial_Movimiento
+
+#Se puede hacer que le den un pescado para que se le llene la barra de hambre?
+#Están desfazados los botones de opciones
 - No tomar
-	Michita: ._.
+	Gato: No confío en tí...
+	Gatita Misteriosa: Te recomiendo que lo tomes.
+	Gatita Misteriosa: Si tu hambre baja podrías [shake rate=20 level=10]morir[/shake] => Tutorial_Barra_de_Hambre
+
+
+~ Tutorial_Movimiento
+Gatita Misteriosa: Ven, sígueme. Te enseñaré lo necesario para moverte por estos callejones.
+# Se puede clasificar como ruptura de 4ta pared el siguiente diálogo???
+Gato: Esta bien, te sigo.
+Gatita Misteriosa: ...
+Gatita Misteriosa: Podrás moverte por el entorno con las teclas [W], [A], [S] y [D].
 => END
 
 
 
+
+# Personajes:
