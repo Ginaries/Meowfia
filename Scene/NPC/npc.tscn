@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://d26xu4bujhhr1"]
+
+[ext_resource type="Script" uid="uid://c1extg14redgw" path="res://Scene/NPC/npc.gd" id="1_2smci"]
+[ext_resource type="Texture2D" uid="uid://ka31stl2ji3x" path="res://icon.svg" id="2_5wa35"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cnkqp"]
+radius = 64.6297
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03uqs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5wa35")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2smci"]
+radius = 125.256
+
+[node name="NPC" type="CharacterBody2D" groups=["npc"]]
+script = ExtResource("1_2smci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cnkqp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_03uqs")
+
+[node name="DetectarPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectarPlayer"]
+shape = SubResource("CircleShape2D_2smci")
+
+[connection signal="body_entered" from="DetectarPlayer" to="." method="_on_detectar_player_body_entered"]
+[connection signal="body_exited" from="DetectarPlayer" to="." method="_on_detectar_player_body_exited"]

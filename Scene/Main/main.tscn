@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://lwkw0iyspxmt"]
+
+[ext_resource type="PackedScene" uid="uid://bglkuw3ume551" path="res://Scene/Player/player.tscn" id="1_ajaps"]
+[ext_resource type="PackedScene" uid="uid://d26xu4bujhhr1" path="res://Scene/NPC/npc.tscn" id="2_c5csi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5csi"]
+size = Vector2(1800, 175)
+
+[node name="Main" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(982, 930)
+shape = SubResource("RectangleShape2D_c5csi")
+
+[node name="Player" parent="." instance=ExtResource("1_ajaps")]
+position = Vector2(1036, 656)
+
+[node name="NPC" parent="." instance=ExtResource("2_c5csi")]
+position = Vector2(343, 702)

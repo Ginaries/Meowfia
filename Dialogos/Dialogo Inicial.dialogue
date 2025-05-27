@@ -1,0 +1,11 @@
+~ start
+Michita: Hola como estas? [shake rate=20 level=10]queres 3 pescaditos?[/shake]
+Gato: Hola...
+- Tomar pescado
+	Michita: Gracias
+- No tomar
+	Michita: ._.
+=> END
+
+
+

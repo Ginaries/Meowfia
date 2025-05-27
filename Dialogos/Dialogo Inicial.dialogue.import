@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://lenkonsq0pan"
+path="res://.godot/imported/Dialogo Inicial.dialogue-5d66bc0d9b1cc3b283c56f85626c6cc8.tres"
+
+[deps]
+
+source_file="res://Dialogos/Dialogo Inicial.dialogue"
+dest_files=["res://.godot/imported/Dialogo Inicial.dialogue-5d66bc0d9b1cc3b283c56f85626c6cc8.tres"]
+
+[params]
+
+defaults=true
