@@ -18,4 +18,13 @@ shape = SubResource("RectangleShape2D_c5csi")
 position = Vector2(1036, 656)
 
 [node name="NPC" parent="." instance=ExtResource("2_c5csi")]
-position = Vector2(343, 702)
+position = Vector2(320, 775)
+Name = "Michita"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 20.0
+offset_top = 19.0
+offset_right = 24.0
+offset_bottom = 46.0

@@ -4,9 +4,11 @@ extends CharacterBody2D
 var Speak:bool=false
 const DIALOGO_INICIAL = preload("res://Dialogos/Dialogo Inicial.dialogue")
 var player:CharacterBody2D
+@onready var label: Label = $Label
 
 
-
+func _ready() -> void:
+	label.text=Name
 func Hablar():
 	DialogueManager.show_dialogue_balloon(DIALOGO_INICIAL)
 

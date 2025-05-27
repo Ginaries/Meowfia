@@ -34,5 +34,11 @@ sprite_frames = SubResource("SpriteFrames_03uqs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectarPlayer"]
 shape = SubResource("CircleShape2D_2smci")
 
+[node name="Label" type="Label" parent="."]
+offset_left = -19.0
+offset_top = -98.0
+offset_right = 21.0
+offset_bottom = -75.0
+
 [connection signal="body_entered" from="DetectarPlayer" to="." method="_on_detectar_player_body_entered"]
 [connection signal="body_exited" from="DetectarPlayer" to="." method="_on_detectar_player_body_exited"]
