@@ -1,0 +1,112 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnbm5sv3pdbgs"]
+
+[ext_resource type="Script" uid="uid://cdyhk3bmtx4h0" path="res://Scene/Menu/menu.gd" id="1_bpl5o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2gvh"]
+bg_color = Color(0.6, 0.862745, 0.6, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bpl5o")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.262745, 0.521569, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -101.5
+offset_right = 118.0
+offset_bottom = 101.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 200
+
+[node name="TITULO" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "MEOWFIA"
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Comenzar"
+
+[node name="Salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Salir"
+
+[node name="CartelNombre" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -570.0
+offset_top = -133.5
+offset_right = 570.0
+offset_bottom = 133.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k2gvh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CartelNombre"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="HSeparator2" type="HSeparator" parent="CartelNombre/VBoxContainer"]
+layout_mode = 2
+
+[node name="CartelTitulo" type="Label" parent="CartelNombre/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "   Ingrese Como quiere que se llame su personaje   "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IngreseNombre" type="LineEdit" parent="CartelNombre/VBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+placeholder_text = "Click Aqui"
+alignment = 1
+
+[node name="Aceptar" type="Button" parent="CartelNombre/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 40
+text = "Aceptar"
+icon_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CartelNombre/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CartelNombre/VBoxContainer/Aceptar" to="." method="_on_aceptar_pressed"]
