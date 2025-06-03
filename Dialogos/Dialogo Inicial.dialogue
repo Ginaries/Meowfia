@@ -1,11 +1,53 @@
-~ start
-Michita: Hola como estas? [shake rate=20 level=10]queres 3 pescaditos?[/shake]
-Gato: Hola...
+~ Introduccion
+Gatita Misteriosa: Uhm... ¿Quién eres?
+Gatita Misteriosa: Parece que no eres de por aquí.
+Gato: ...
+Gato: Hola... Mi nombre es XXXX
+Gato: Solo sé que desperté aquí, ¿podrías decirme donde estoy?...
+Gatita Misteriosa: Te encuentras en el mundo de "Meowfia". 
+
+~ Tutorial_Barra_de_Hambre
+Gatita Misteriosa: Se nota que tienes hambre. ¿Por qué no tomas este [shake rate=20 level=10]pescado[/shake]?
 - Tomar pescado
-	Michita: Gracias
+	Gato: Gracias...
+	Gatita Misteriosa: Te ayudarán a mantenerte vivo. Llenarán tu barra de hambre. => Tutorial_Movimiento
+
+#Se puede hacer que le den un pescado para que se le llene la barra de hambre?
+#Están desfazados los botones de opciones
 - No tomar
-	Michita: ._.
+	Gato: No confío en tí...
+	Gatita Misteriosa: Te recomiendo que lo tomes.
+	Gatita Misteriosa: Si tu hambre baja podrías [shake rate=20 level=10]morir[/shake]. => Tutorial_Barra_de_Hambre
+
+
+~ Tutorial_Movimiento
+Gatita Misteriosa: Ven, sígueme. Te enseñaré lo necesario para moverte por estos callejones.
+# Se puede clasificar como ruptura de 4ta pared el siguiente diálogo???
+Gato: Esta bien, te sigo.
+Gatita Misteriosa: ...
+Gatita Misteriosa: Podrás moverte por el entorno con las teclas [W], [A], [S] y [D].
+Gatita Misteriosa: ¿Por qué no lo intentas?
+
+#Si se puede poner la condición de que toque todas las teclas WASD para continuar genial, sino no problem.
+# El espacio saltea el dialogo
+Gatita Misteriosa: Ahora, ¿por qué no intentas saltar?... Presiona [CLICK IZQUIERDO].
+#Mismo criterio que con el WASD
+Gatita Misteriosa: Bien hecho.
+Gatita Misteriosa: El momento de desaparecer ha llegado. Suerte!
+Gatita Misteriosa: Ah... casi lo olvido.=> Tutorial_Interaccion
+
+~ Tutorial_Interaccion
+Gato: ¿Qué cosa?
+Gatita Misteriosa: ¿Ves esos contenedores de ahi?
+Gatita Misteriosa: ¿Por qué no revisas que hay dentro?
+Gato:...
+Gatita Misteriosa: Acércate a él y presiona [CLICK DERECHO].
+#Criterio del WASD y el Espacio
+Gato: ¿Así?...
+Gatita Misteriosa: Eso es!
+Gatita Misteriosa: Ahora ya sabes como manejarte por aquí.
+Gatita Misteriosa: Hasta pronto, nos vemos luego... O no.
+Gatita Misteriosa: *Desaparece*
+Gato: Estoy a mi suerte ahora...
 => END
-
-
-
+# Para crear personajes se pone el nombre, ej Gatita Misteriosa:
