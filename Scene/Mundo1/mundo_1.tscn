@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b20bpdxynqru"]
+
+[ext_resource type="PackedScene" uid="uid://bglkuw3ume551" path="res://Scene/Player/player.tscn" id="1_r1u74"]
+[ext_resource type="PackedScene" uid="uid://d26xu4bujhhr1" path="res://Scene/NPC/npc.tscn" id="2_bxldh"]
+
+[node name="Mundo 1" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_r1u74")]
+position = Vector2(994, 497)
+
+[node name="NPC" parent="." instance=ExtResource("2_bxldh")]
+position = Vector2(334, 443)
+Name = "Gatita Misteriosa"
