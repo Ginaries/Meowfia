@@ -4,13 +4,13 @@ Gatita Misteriosa: Parece que no eres de por aquí.
 Gato: ...
 Gato: Hola... Mi nombre es {{PlayerStats.Nombre}}
 {{PlayerStats.Nombre}}: Solo sé que desperté aquí, ¿podrías decirme donde estoy?...
-Gatita Misteriosa: Te encuentras en el mundo de "Meowfia". 
+Gatita Misteriosa: Te encuentras en el mundo de "Meowfia". => END
 
 ~ Tutorial_Barra_de_Hambre
 Gatita Misteriosa: Se nota que tienes hambre. ¿Por qué no tomas este [shake rate=20 level=10]pescado[/shake]?
 - Tomar pescado
 	{{PlayerStats.Nombre}}: Gracias...
-	Gatita Misteriosa: Te ayudarán a mantenerte vivo. Llenarán tu barra de hambre. => Tutorial_Movimiento
+	Gatita Misteriosa: Te ayudarán a mantenerte vivo. Llenarán tu barra de hambre. => END
 
 #Se puede hacer que le den un pescado para que se le llene la barra de hambre? SI
 #Están desfazados los botones de opciones . ok 
@@ -26,12 +26,10 @@ Gatita Misteriosa: Ven, sígueme. Te enseñaré lo necesario para moverte por es
 {{PlayerStats.Nombre}}: Esta bien, te sigo.
 Gatita Misteriosa: ...
 Gatita Misteriosa: Podrás moverte por el entorno con las teclas [W], [A], [S] y [D].
-Gatita Misteriosa: ¿Por qué no lo intentas?
-
-#Si se puede poner la condición de que toque todas las teclas WASD para continuar genial, sino no problem.
-# El espacio saltea el dialogo
-Gatita Misteriosa: Ahora, ¿por qué no intentas saltar?... Presiona [CLICK IZQUIERDO].
+Gatita Misteriosa: ¿Por qué no lo intentas?=> END
 #Mismo criterio que con el WASD
+
+~ Fin_Movimiento
 Gatita Misteriosa: Bien hecho.
 Gatita Misteriosa: El momento de desaparecer ha llegado. Suerte!
 Gatita Misteriosa: Ah... casi lo olvido. => Tutorial_Interaccion
@@ -41,8 +39,10 @@ Gatita Misteriosa: Ah... casi lo olvido. => Tutorial_Interaccion
 Gatita Misteriosa: ¿Ves esos contenedores de ahi?
 Gatita Misteriosa: ¿Por qué no revisas que hay dentro?
 {{PlayerStats.Nombre}}: ...
-Gatita Misteriosa: Acércate a él y presiona [CLICK DERECHO].
-#Criterio del WASD y el Espacio
+Gatita Misteriosa: Acércate a él y presiona [CLICK DERECHO]. => END
+
+~ Fin_Interaccion
+#este se dispara cuando el personaje interaccione
 {{PlayerStats.Nombre}}: ¿Así?...
 Gatita Misteriosa: Eso es!
 Gatita Misteriosa: Ahora ya sabes como manejarte por aquí.

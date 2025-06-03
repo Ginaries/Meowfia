@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://niqw8radsakf"]
+
+[ext_resource type="Script" uid="uid://cxe6pkg1svbmn" path="res://Scene/TachoDeBasura/tacho_de_basura.gd" id="1_5icyk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1j5xd"]
+radius = 66.0681
+
+[node name="TachoDeBasura" type="Area2D" groups=["basura"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_5icyk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1j5xd")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bglkuw3ume551"]
+[gd_scene load_steps=7 format=3 uid="uid://bglkuw3ume551"]
 
 [ext_resource type="Texture2D" uid="uid://ka31stl2ji3x" path="res://icon.svg" id="1_67a6e"]
 [ext_resource type="Script" uid="uid://dnhc2cr7htbm3" path="res://Scene/Player/player.gd" id="1_yic5t"]
@@ -21,6 +21,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_yic5t"]
 radius = 118.106
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_uuj77"]
+radius = 119.206
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_yic5t")
 
@@ -36,5 +39,13 @@ sprite_frames = SubResource("SpriteFrames_g0r71")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogar"]
 shape = SubResource("CircleShape2D_yic5t")
 
+[node name="DetectorBasura" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorBasura"]
+shape = SubResource("CircleShape2D_uuj77")
+
 [connection signal="body_entered" from="Dialogar" to="." method="_on_dialogar_body_entered"]
 [connection signal="body_exited" from="Dialogar" to="." method="_on_dialogar_body_exited"]
+[connection signal="area_entered" from="DetectorBasura" to="." method="_on_detector_basura_area_entered"]

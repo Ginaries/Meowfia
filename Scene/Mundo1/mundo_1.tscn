@@ -1,13 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://b20bpdxynqru"]
+[gd_scene load_steps=7 format=3 uid="uid://b20bpdxynqru"]
 
+[ext_resource type="Script" uid="uid://dh26hma0f3d13" path="res://Scene/Mundo1/mundo_1.gd" id="1_pijtp"]
 [ext_resource type="PackedScene" uid="uid://bglkuw3ume551" path="res://Scene/Player/player.tscn" id="1_r1u74"]
 [ext_resource type="PackedScene" uid="uid://d26xu4bujhhr1" path="res://Scene/NPC/npc.tscn" id="2_bxldh"]
+[ext_resource type="Script" uid="uid://6epnl845p8a0" path="res://Scene/Hud/canvas_layer.gd" id="4_ydd2s"]
+[ext_resource type="Texture2D" uid="uid://ccaw05womynpr" path="res://Assets/Hub/Moneda.png" id="5_hgbl3"]
+[ext_resource type="PackedScene" uid="uid://niqw8radsakf" path="res://Scene/TachoDeBasura/tacho_de_basura.tscn" id="6_hgbl3"]
 
 [node name="Mundo 1" type="Node2D"]
+script = ExtResource("1_pijtp")
 
 [node name="Player" parent="." instance=ExtResource("1_r1u74")]
 position = Vector2(994, 497)
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.15
+drag_top_margin = 0.15
+drag_right_margin = 0.15
+drag_bottom_margin = 0.15
+
 [node name="NPC" parent="." instance=ExtResource("2_bxldh")]
 position = Vector2(334, 443)
 Name = "Gatita Misteriosa"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("4_ydd2s")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -233.0
+offset_bottom = 200.0
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_hgbl3")
+
+[node name="Moneda" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+
+[node name="TachoDeBasura" parent="." instance=ExtResource("6_hgbl3")]
+position = Vector2(975, 184)

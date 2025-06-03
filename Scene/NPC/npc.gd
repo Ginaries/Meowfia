@@ -10,7 +10,9 @@ var player:CharacterBody2D
 func _ready() -> void:
 	label.text=Name
 func Hablar():
-	DialogueManager.show_dialogue_balloon(DIALOGO_INICIAL)
+	DialogueManager.show_dialogue_balloon(NpcDialogo.BDialTuto,NpcDialogo.DialogosTuto[NpcDialogo.IndiceTuto])
+	await DialogueManager.dialogue_ended
+	NpcDialogo.TutoNext()
 
 
 func _on_detectar_player_body_entered(body: Node2D) -> void:
