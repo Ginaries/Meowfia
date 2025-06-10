@@ -6,9 +6,10 @@ var Hambre=100
 var Chatarra:int=0
 var Monedas:int = 0
 var Alimentacion:int=50
-var inventario: Dictionary = {}
-var posibles_objetos = ["lata", "hueso", "trapo", "botella"]
-var objeto_pedido = posibles_objetos.pick_random()
+var Ataque:int=2
+var inventario: Dictionary = {"Lata":0, "Hueso":0, "Trapo":0, "Botella":0}
+var posibles_objetos = ["Lata", "Hueso", "Trapo", "Botella"]
+var objeto_pedido:String
 #----------------------------------------------------------------------
 func agregar_a_inventario(nombre_objeto: String):
 	if inventario.has(nombre_objeto):

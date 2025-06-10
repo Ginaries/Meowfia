@@ -19,11 +19,13 @@ config/icon="res://icon.svg"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 PlayerStats="*res://Singletone/player_stats.gd"
 NpcDialogo="*res://Singletone/npc_dialogo.gd"
+EnemigosStats="*res://Singletone/enemigos_stats.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -66,7 +68,7 @@ escape={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogos/Dialogo Inicial.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogos/Dialogo Inicial.dialogue", "res://Dialogos/Comerciante.dialogue")
 
 [layer_names]
 

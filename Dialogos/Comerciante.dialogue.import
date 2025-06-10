@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cwohiu514nw6c"
+path="res://.godot/imported/Comerciante.dialogue-4950c11c2b20434149b416ea4b992bcd.tres"
+
+[deps]
+
+source_file="res://Dialogos/Comerciante.dialogue"
+dest_files=["res://.godot/imported/Comerciante.dialogue-4950c11c2b20434149b416ea4b992bcd.tres"]
+
+[params]
+
+defaults=true

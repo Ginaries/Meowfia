@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://niqw8radsakf"]
+[gd_scene load_steps=4 format=3 uid="uid://niqw8radsakf"]
 
 [ext_resource type="Script" uid="uid://cxe6pkg1svbmn" path="res://Scene/TachoDeBasura/tacho_de_basura.gd" id="1_5icyk"]
+[ext_resource type="Texture2D" uid="uid://ka31stl2ji3x" path="res://icon.svg" id="2_1j5xd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1j5xd"]
 radius = 66.0681
@@ -12,3 +13,12 @@ script = ExtResource("1_5icyk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1j5xd")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_1j5xd")
+
+[node name="Recargado" type="Timer" parent="."]
+wait_time = 30.0
+
+[connection signal="timeout" from="Recargado" to="." method="_on_recargado_timeout"]

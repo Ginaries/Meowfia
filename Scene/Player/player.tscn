@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bglkuw3ume551"]
+[gd_scene load_steps=8 format=3 uid="uid://bglkuw3ume551"]
 
 [ext_resource type="Texture2D" uid="uid://ka31stl2ji3x" path="res://icon.svg" id="1_67a6e"]
 [ext_resource type="Script" uid="uid://dnhc2cr7htbm3" path="res://Scene/Player/player.gd" id="1_yic5t"]
@@ -7,11 +7,18 @@
 radius = 64.5
 height = 129.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yic5t"]
+atlas = ExtResource("1_67a6e")
+region = Rect2(0, 0, 128, 128)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_g0r71"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_67a6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yic5t")
 }],
 "loop": true,
 "name": &"default",

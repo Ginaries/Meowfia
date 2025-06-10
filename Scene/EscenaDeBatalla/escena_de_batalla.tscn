@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://iirokylldssq"]
+
+[ext_resource type="Texture2D" uid="uid://ka31stl2ji3x" path="res://icon.svg" id="1_paw80"]
+[ext_resource type="Script" uid="uid://bbvqsncwfwtj8" path="res://Scene/EscenaDeBatalla/escena_de_batalla.gd" id="1_ylj5n"]
+
+[node name="Escena de batalla" type="Node2D"]
+script = ExtResource("1_ylj5n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(981, 292)
+scale = Vector2(2.08594, 2.08594)
+texture = ExtResource("1_paw80")
+
+[node name="Atacar" type="Button" parent="."]
+offset_left = 778.0
+offset_top = 706.0
+offset_right = 1173.0
+offset_bottom = 820.0
+text = "Atacar"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 772.0
+offset_top = 571.0
+offset_right = 1184.0
+offset_bottom = 598.0
+value = 50.0
+
+[connection signal="pressed" from="Atacar" to="." method="_on_atacar_pressed"]
