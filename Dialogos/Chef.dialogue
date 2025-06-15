@@ -1,24 +1,24 @@
 ~ Introduccion_Chef
 # es por si le llegasemos a agregar un chef.
-Gatita Chef: Ey... Si buscas comida, yo podría darte una mano.
+Gatita Chef: Ey... Si buscas comida, yo podría darte una patita.
 Gatita Chef: ¿Por qué no le échas un vistazo?
 - Muéstrame lo que tienes.
-	Gatita Chef : Tienes[color=yellow] {{PlayerStats.Monedas}} monedas [/color].
+	Gatita Chef : Tienes[color=yellow] {{PlayerStats.MichiMonedas}} MichiMonedas[/color].
 	Gatita Chef: ¿Qué te gustaría comprar?
-	- Michigalletas [color=yellow]x 3 Monedas[/color].
+	- Michigalletas [color=yellow]x 3 MichiMonedas[/color].
 		do PlayerStats.Curar(5) 
-		set PlayerStats.Monedas -= 5
+		set PlayerStats.MichiMonedas -= 5
 		=> Saludo_Chef
-	- Pescaditos Deliciosos [color=yellow]x 10 Monedas[/color].
-		set PlayerStats.Monedas -= 10
+	- Pescaditos Deliciosos [color=yellow]x 10 MichiMonedas[/color].
+		set PlayerStats.MichiMonedas -= 10
 		do PlayerStats.Curar(10)
 		=> Saludo_Chef
-	- Sobre de Mhiskas [color=yellow]X 30 Monedas[/color].
-		set PlayerStats.Monedas -= 30
+	- Sobre de Mhiskas [color=yellow]X 30 MichiMonedas[/color].
+		set PlayerStats.MichiMonedas -= 30
 		do PlayerStats.Curar(15)
 		=> Saludo_Chef
-	- SuperMichi Dulce [color=yellow]X 50 Monedas[/color].
-		set PlayerStats.Monedas -= 50
+	- SuperMichi Dulce [color=yellow]X 50 MichiMonedas[/color].
+		set PlayerStats.MichiMonedas -= 50
 		do PlayerStats.Curar(20)
 		=> Saludo_Chef
 - No tengo mucha hambre ahora. 

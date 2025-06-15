@@ -12,7 +12,7 @@ Jefe de la Mafia: Si me consigues NUMERO RANDOM de chatarra para mi, te daré RE
 %25 Jefe de la Mafia: Que rápido.
 %25 Jefe de la Mafia: ¿Ya lo conseguiste?
 - Intercambiar
-	Jefe de la Mafia: Deseas intercambiar {{PlayerStats.inventario["Chatarra"]}} por NUMERO RANDOM monedas?/Reputacion
+	Jefe de la Mafia: Deseas intercambiar {{PlayerStats.inventario["Chatarra"]}} por NUMERO RANDOM MichiMonedas?/Reputacion
 - Rechazar
 	Jefe de la Mafia: ¡No me hagas perder el tiempo!
 => END
