@@ -33,8 +33,7 @@ func _input(event):
 	if event.is_action_pressed("Interactuar") and Basurero and Basurero_cerca!=null:
 		print(Basurero_cerca)
 		Basurero_cerca.Buscar()
-	if event.is_action_pressed("Interactuar"):
-		PlayerStats.Curar()
+
 
 func Interactuar() -> bool:
 	if Input.is_action_just_pressed("Interactuar"):
