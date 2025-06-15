@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cnbkb30pwt4v4"
+path="res://.godot/imported/Mafia.dialogue-abbdf16a87856d8b26ced7684cf76513.tres"
+
+[deps]
+
+source_file="res://Dialogos/Mafia.dialogue"
+dest_files=["res://.godot/imported/Mafia.dialogue-abbdf16a87856d8b26ced7684cf76513.tres"]
+
+[params]
+
+defaults=true

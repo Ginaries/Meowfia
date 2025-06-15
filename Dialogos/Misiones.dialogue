@@ -1,0 +1,18 @@
+~ Tutorial_Misiones
+Jefe de la Mafia: Ya que estas aquí. Tengo una propuesta...
+{{PlayerStats.Nombre}}: ¿Qué quieres?
+Jefe de la Mafia: Si haces algunas cosas por mi, podría darte algunas recompensas.
+Jefe de la Mafia: Parece que tienes {{PlayerStats.inventario["Chatarra"]}}.
+Jefe de la Mafia: Si me consigues NUMERO RANDOM de chatarra para mi, te daré REPUTACIÓN? DINERO?
+=> Entregar_Mision
+
+~ Entregar_Mision
+%25 Jefe de la Mafia: ¿Ya regresaste?
+%25 Jefe de la Mafia: Veamos que trajiste.
+%25 Jefe de la Mafia: Que rápido.
+%25 Jefe de la Mafia: ¿Ya lo conseguiste?
+- Intercambiar
+	Jefe de la Mafia: Deseas intercambiar {{PlayerStats.inventario["Chatarra"]}} por NUMERO RANDOM monedas?/Reputacion
+- Rechazar
+	Jefe de la Mafia: ¡No me hagas perder el tiempo!
+=> END

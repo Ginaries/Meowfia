@@ -1,20 +1,61 @@
-~ start
-{{PlayerStats.Nombre}}: Hola... usted es el gran comerciante?
-El gran Comerciante: Si...
-{{PlayerStats.Nombre}}: Usted?
-El gran Comerciante: Si...
-{{PlayerStats.Nombre}}: Enserio?
-El gran Comerciante: Si...
-El gran Comerciante: Que necesitas? Tienes chatarra para intercambiar? Espero que sea de gran valor...
-- Lata
-	El gran Comerciante : Tienes {{PlayerStats.inventario["Lata"]}} Lata
-	Do 
-	El gran Comerciante : Deseas Intercambiarlo por 
-- Hueso
-	El gran Comerciante : Tienes {{PlayerStats.inventario["Hueso"]}} Hueso
-- Trapo
-	El gran Comerciante : Tienes {{PlayerStats.inventario["Trapo"]}} Trapo
-- Botella
-	El gran Comerciante : Tienes {{PlayerStats.inventario["Botella"]}} Botella
+~ Introduccion_Comerciante
+{{PlayerStats.Nombre}}: Uhm... ¿Qué es ese ruido?
+Comerciante: Ey... ¡Por aquí!
+{{PlayerStats.Nombre}}: ¿Quién eres?
+Comerciante: Puedo ayudarte a conseguir Monedas Gatunas...
+Comerciante: Si es lo que te interesa.
+{{PlayerStats.Nombre}}: ¿Y que puedo hacer con ellas?
+Comerciante: Te serán útiles por aquí.
+Comerciante: Podrás comprar "favores" y hacerte mas conocido. 
+Comerciante: Si te vuelves conocido, podrías conseguir mejores ofertas...
+{{PlayerStats.Nombre}}: ...
+=> Iniciar_Tradeo
 
+~ Iniciar_Tradeo
+%25 Comerciante: Veamos que tienes.
+%25 Comerciante: ¿Qué puedo ofrecerte?
+%25 Comerciante: ¿Qué me traes ahora?
+%25 Comerciante: ¿Listo para comerciar?
+#al finalizar el tradeo habria que pasar a => Saludo_Comerciante
+- Lata
+	Comerciante : Tienes [color=gray]{{PlayerStats.inventario["Lata"]}} Lata[/color].
+	Comerciante : Deseas Intercambiarlo por [color=yellow]{{PlayerStats.inventario["Lata"]*1}} Monedas[/color]?
+	- Si 
+		set PlayerStats.Monedas += PlayerStats.inventario["Lata"]*1
+	- No 
+	Comerciante: ...
+	=> Saludo_No
+- Hueso
+	Comerciante : Tienes [color=cornsilk]{{PlayerStats.inventario["Hueso"]}} Hueso[/color].
+	Comerciante : Deseas Intercambiarlo por [color=yellow]{{PlayerStats.inventario["Hueso"]*2}} Monedas[/color]?
+	- Si 
+		set PlayerStats.Monedas += PlayerStats.inventario["Hueso"]*2
+	- No => Saludo_No
+	Comerciante: ...
+- Trapo
+	Comerciante : Tienes [color=red]{{PlayerStats.inventario["Trapo"]}} Trapo[/color].
+	Comerciante : Deseas Intercambiarlo por [color=yellow]{{PlayerStats.inventario["Trapo"]*3}} Monedas[/color]?
+	- Si 
+		set PlayerStats.Monedas += PlayerStats.inventario["Trapo"]*3
+	- No => Saludo_No
+	Comerciante: ...
+- Botella
+	Comerciante : Tienes [color=cadet_blue]{{PlayerStats.inventario["Botella"]}} Botella[/color].
+	Comerciante : Deseas Intercambiarlo por [color=yellow]{{PlayerStats.inventario["Botella"]*4}} Monedas[/color]?
+	- Si 
+		set PlayerStats.Monedas += PlayerStats.inventario["Botella"]*4
+	- No => Saludo_No
+	Comerciante: ...
+=> Saludo_Comerciante
+
+~ Saludo_No
+%50 Comerciante: No me hagas perder el tiempo.
+%50 Comerciante: Vuelve cuando tengas algo.
+=> END
+
+~ Saludo_Comerciante
+%25 Comerciante: Ten cuidado... Nos vemos pronto.
+%25 Comerciante: Regresa cuando tengas más chatarra.
+%25 Comerciante: Gran trato, nos mantendremos en contacto.
+%25 Comerciante: Parece de buena calidad. Regresa más tarde.
 => END

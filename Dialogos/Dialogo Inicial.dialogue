@@ -1,23 +1,21 @@
-
-~ Introduccion
+ ~ Introduccion
 Gatita Misteriosa: Uhm... ¿Quién eres?
 Gatita Misteriosa: Parece que no eres de por aquí.
 Gato: ...
 Gato: Hola... Mi nombre es {{PlayerStats.Nombre}}
 {{PlayerStats.Nombre}}: Solo sé que desperté aquí, ¿podrías decirme donde estoy?...
-Gatita Misteriosa: Te encuentras en el mundo de "Meowfia". 
+Gatita Misteriosa: Te encuentras en el mundo de "Meowfia". => END
 
 ~ Tutorial_Barra_de_Hambre
 Gatita Misteriosa: Se nota que tienes hambre. ¿Por qué no tomas este [shake rate=20 level=10]pescado[/shake]?
 - Tomar pescado
-	{{PlayerStats.Nombre}}(Feliz) : Gracias...
-	#do de carga de alimentacion
-	Gatita Misteriosa: Te ayudarán a mantenerte vivo. Llenarán tu barra de hambre. => Tutorial_Movimiento
+	{{PlayerStats.Nombre}}: Gracias...
+	Gatita Misteriosa: Te ayudarán a mantenerte vivo. Llenarán tu barra de hambre. => END
 
 #Se puede hacer que le den un pescado para que se le llene la barra de hambre? SI
 #Están desfazados los botones de opciones . ok 
 - No tomar
-	{{PlayerStats.Nombre}}: No confío en ti...
+	{{PlayerStats.Nombre}}: No confío en tí...
 	Gatita Misteriosa: Te recomiendo que lo tomes.
 	Gatita Misteriosa: Si tu hambre baja podrías [shake rate=20 level=10]morir[/shake]. => Tutorial_Barra_de_Hambre
 
@@ -25,16 +23,14 @@ Gatita Misteriosa: Se nota que tienes hambre. ¿Por qué no tomas este [shake ra
 ~ Tutorial_Movimiento
 Gatita Misteriosa: Ven, sígueme. Te enseñaré lo necesario para moverte por estos callejones.
 # Se puede clasificar como ruptura de 4ta pared el siguiente diálogo???
-{{PlayerStats.Nombre}}: Está bien, te sigo.
+{{PlayerStats.Nombre}}: Esta bien, te sigo.
 Gatita Misteriosa: ...
 Gatita Misteriosa: Podrás moverte por el entorno con las teclas [W], [A], [S] y [D].
-Gatita Misteriosa: ¿Por qué no lo intentas?
+Gatita Misteriosa: ¿Por qué no lo intentas?=> END
+#Mismo criterio que con el WASD
 
-# Si se puede poner la condición de que toque todas las teclas WASD para continuar genial, sino no problem.
-# El espacio saltea el dialogo
-# Gatita Misteriosa: Ahora, ¿por qué no intentas saltar?... Presiona [CLICK IZQUIERDO].
-# Mismo criterio que con el WASD
-# Gatita Misteriosa: Bien hecho.
+~ Fin_Movimiento
+Gatita Misteriosa: Bien hecho.
 Gatita Misteriosa: El momento de desaparecer ha llegado. Suerte!
 Gatita Misteriosa: Ah... casi lo olvido. => Tutorial_Interaccion
 
@@ -43,8 +39,10 @@ Gatita Misteriosa: Ah... casi lo olvido. => Tutorial_Interaccion
 Gatita Misteriosa: ¿Ves esos contenedores de ahi?
 Gatita Misteriosa: ¿Por qué no revisas que hay dentro?
 {{PlayerStats.Nombre}}: ...
-Gatita Misteriosa: Acércate a él y presiona [CLICK DERECHO].
-#Criterio del WASD y el Espacio
+Gatita Misteriosa: Acércate a él y presiona [CLICK DERECHO]. => END
+
+~ Fin_Interaccion
+#este se dispara cuando el personaje interaccione
 {{PlayerStats.Nombre}}: ¿Así?...
 Gatita Misteriosa: Eso es!
 Gatita Misteriosa: Ahora ya sabes como manejarte por aquí.
@@ -53,81 +51,3 @@ Gatita Misteriosa: *Desaparece*
 {{PlayerStats.Nombre}}: Estoy a mi suerte ahora...
 => END
 # Para crear personajes se pone el nombre, ej Gatita Misteriosa:
-
-
-~ Introduccion_Comerciante
-{{PlayerStats.Nombre}}: Uhm... ¿Qué es ese ruido?
-Comerciante: Ey... ¡Por aquí!
-{{PlayerStats.Nombre}}: ¿Quién eres?
-Comerciante: Puedo ayudarte a conseguir Monedas Gatunas...
-Comerciante: Si es lo que te interesa.
-{{PlayerStats.Nombre}}: ¿Y que puedo hacer con ellas?
-Comerciante: Te serán útiles por aquí.
-Comerciante: Podrás comprar "favores" y hacerte mas conocido. 
-Comerciante: Si te vuelves conocido, podrías conseguir mejores ofertas...
-{{PlayerStats.Nombre}}: ...
-Comerciante: ¿Por qué no me dejas ver lo que conseguiste?
-=> Iniciar_Tradeo
-
-~ Iniciar_Tradeo
-%25 Comerciante: Veamos que tienes.
-%25 Comerciante: ¿Qué puedo ofrecerte?
-%25 Comerciante: ¿Qué me traes ahora?
-%25 Comerciante: ¿Listo para comerciar?
-#al finalizar el tradeo habria que pasar a => Saludo_Comerciante
-
-~ Saludo_Comerciante
-%25 Comerciante: Ten cuidado... Nos vemos pronto.
-%25 Comerciante: Regresa cuando tengas más chatarra.
-%25 Comerciante: Gran trato, nos mantendremos en contacto.
-%25 Comerciante: Parece de buena calidad. Regresa más tarde.
-
-~ Primera_Interaccion_Mafia
-# Para que vaya acorde a la historia, deberíamos hacer que
-# el prota interactue con un basurero y ahi aparezcan
-# los de la mafia.
-Grupo Misterioso: ¡Ey! ¿Quién anda ahí?...
-Grupo Misterioso: Ese basurero es nuestro.
-{{PlayerStats.Nombre}}: Pues... no veo tu nombre en él.
-Matón 1: Nosotros somos La Mafia Gatuna. 
-#se puede hacer que la parte de La Mafia Gatuna esté en negrita? o algún efecto cool dea
-# queda mejor La Mafia Gatuna o LA MAFIA GATUNA
-Matón 1: Nuestros actos son conocidos por toda la ciudad
-Matón 1: Este callejón nos pertenece.
-Jefe de la Mafia: Esperen, nos podría ser de utilidad...
-Jefe de la Mafia: ¿Cuál es tu nombre?
-{{PlayerStats.Nombre}}: Me llamo {{PlayerStats.Nombre}} y he oído de ustedes...
-Matón 2: Como eres nuevo, te la dejaremos pasar. 
-Matón 1: Pero deberás entregarnos una pequeña paga si quieres seguir aquí.
-Jefe de la Mafia: Estaremos esperando...
-
-~ Introduccion_Chef
-# es por si le llegasemos a agregar un chef.
-Gatita Chef: Ey... Si buscas comida, yo podría darte una mano.
-Gatita Chef: ¿Por qué no le échas un vistazo?
-# al terminar, ir a => Saludo_Chef
-
-~ Saludo_Chef
-%25 Gatita Chef: ¡Que lo disfrutes!
-%25 Gatita Chef: Espero que sea de tu agrado.
-%25 Gatita Chef: Regresa cuando tengas hambre.
-%25 Gatita Chef: Nos vemos pronto...
-
-~ Tutorial_Mejoras
-Matón 1: Ey, con respecto a lo que dijo el Jefe...
-Matón 2: Podemos ayudarte a sobrevivir en el callejón.
-Matón 1: Mira estas mejoras, podrían serte útiles.
-
-~ Compra_Mejoras
-%25 Matón 1: Mira estas mejoras...
-%25 Matón 2: Quizás puedan ayudarte...
-%25 Matón 1: Échales un ojo...
-%25 Matón 2: Puede que te interesen...
-# al terminar, ir a => Saludo_Mejoras
-
-~ Saludo_Mejoras
-%25 Matón 1: Regresa luego...
-%25 Matón 2: Suerte en las calles...
-%25 Matón 1: Vuelve cuando tengas más Monedas Gatunas...
-%25 Matón 2: No olvides pagarnos...
-

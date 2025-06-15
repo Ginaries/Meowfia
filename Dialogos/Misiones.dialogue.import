@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dk16bin26gpoi"
+path="res://.godot/imported/Misiones.dialogue-4ef13cf4ba051d866eb5e9e62f90aef4.tres"
+
+[deps]
+
+source_file="res://Dialogos/Misiones.dialogue"
+dest_files=["res://.godot/imported/Misiones.dialogue-4ef13cf4ba051d866eb5e9e62f90aef4.tres"]
+
+[params]
+
+defaults=true

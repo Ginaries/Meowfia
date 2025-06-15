@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cd0jk5u14h8o0"
+path="res://.godot/imported/Mejoras.dialogue-b41078c781b19332af894d916df6acb6.tres"
+
+[deps]
+
+source_file="res://Dialogos/Mejoras.dialogue"
+dest_files=["res://.godot/imported/Mejoras.dialogue-b41078c781b19332af894d916df6acb6.tres"]
+
+[params]
+
+defaults=true

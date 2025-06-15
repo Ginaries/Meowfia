@@ -25,6 +25,7 @@ EnemigosStats="*res://Singletone/enemigos_stats.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -67,7 +68,7 @@ escape={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogos/Dialogo Inicial.dialogue", "res://Dialogos/Comerciante.dialogue", "res://Dialogos/DialogoCombate.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogos/Dialogo Inicial.dialogue", "res://Dialogos/Comerciante.dialogue", "res://Dialogos/DialogoCombate.dialogue", "res://Dialogos/Mafia.dialogue", "res://Dialogos/Mejoras.dialogue", "res://Dialogos/Chef.dialogue", "res://Dialogos/Misiones.dialogue")
 
 [layer_names]
 
