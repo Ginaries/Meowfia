@@ -5,7 +5,7 @@ var IconSelect:Texture
 var Icons:Array[Texture]=[]
 var TiposRareza:Array[String]=["Comun","Poco Comun","Raro","Mitico","Legendario"]
 var Rareza:String
-var PosibilidadNombre:Array[String]=["Michi1","Michi2","Michi3"]
+var PosibilidadNombre:Array[String]=["Fabi","Santi","Laura"]
 var SaludMax:int
 var SaludActual:int
 var ExpOfrecida:int

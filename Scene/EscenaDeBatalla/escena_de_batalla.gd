@@ -23,6 +23,5 @@ func Actualizar():
 	sprite_2d.texture=EnemigosStats.IconSelect
 
 func _on_atacar_pressed() -> void:
-	#EnemigosStats.SaludActual-=PlayerStats.Ataque
-	#print(EnemigosStats.SaludActual)
-	Actualizar()
+	EnemigosStats.SaludActual-=PlayerStats.Ataque
+	print(EnemigosStats.SaludActual)

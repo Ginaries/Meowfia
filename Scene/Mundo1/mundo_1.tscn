@@ -47,5 +47,11 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 50
 
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 37.0
+offset_top = 25.0
+offset_right = 294.0
+offset_bottom = 52.0
+
 [node name="TachoDeBasura" parent="." instance=ExtResource("6_hgbl3")]
 position = Vector2(975, 184)

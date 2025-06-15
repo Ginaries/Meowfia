@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bglkuw3ume551"]
+[gd_scene load_steps=10 format=3 uid="uid://bglkuw3ume551"]
 
 [ext_resource type="Texture2D" uid="uid://ka31stl2ji3x" path="res://icon.svg" id="1_67a6e"]
 [ext_resource type="Script" uid="uid://dnhc2cr7htbm3" path="res://Scene/Player/player.gd" id="1_yic5t"]
+[ext_resource type="Texture2D" uid="uid://dnc468xoh4glv" path="res://Assets/michi_nuevo2.png" id="2_88wa8"]
+[ext_resource type="Texture2D" uid="uid://c1yg517lhq4h0" path="res://Assets/michi_nuevo.png" id="3_jd8gp"]
+[ext_resource type="Texture2D" uid="uid://dyfwxgggy3ltx" path="res://Assets/michi_nuevo3.png" id="4_ewflj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uuj77"]
 radius = 64.5
@@ -9,6 +12,20 @@ height = 129.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g0r71"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_88wa8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jd8gp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ewflj")
+}],
+"loop": true,
+"name": &"Frente",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_67a6e")
@@ -28,18 +45,18 @@ radius = 119.206
 script = ExtResource("1_yic5t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0.5, 0.5)
 shape = SubResource("CapsuleShape2D_uuj77")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(3.41728e-06, 0.465167, 0.614284, 1)
 position = Vector2(0.499985, 0.5)
 scale = Vector2(1.002, 1.002)
 sprite_frames = SubResource("SpriteFrames_g0r71")
-frame_progress = 0.552589
+animation = &"Frente"
+frame_progress = 0.72426
 
 [node name="Dialogar" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogar"]
 shape = SubResource("CircleShape2D_yic5t")
@@ -49,7 +66,6 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorBasura"]
-visible = false
 shape = SubResource("CircleShape2D_uuj77")
 
 [connection signal="body_entered" from="Dialogar" to="." method="_on_dialogar_body_entered"]

@@ -69,3 +69,9 @@ func derrotar_enemigo(exp:int=EnemigosStats.ExpOfrecida):
 	ganar_experiencia(exp)
 	obtener_objeto_de_combate()
 	Monedas += randi_range(1, 3)
+#--------------------SALUDRECARGA------------------------
+func Curar() -> void:
+	while Alimentacion < Hambre:
+		Alimentacion += 1
+		print("Debug: Alimentacion =", Alimentacion)
+		await get_tree().create_timer(0.05).timeout

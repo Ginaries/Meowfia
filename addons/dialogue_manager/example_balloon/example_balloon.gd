@@ -51,6 +51,9 @@ var mutation_cooldown: Timer = Timer.new()
 ## The menu of responses
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
+@onready var portrail: TextureRect = $Balloon/Portrail
+
+
 
 func _ready() -> void:
 	balloon.hide()
@@ -97,7 +100,15 @@ func apply_dialogue_line() -> void:
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
-
+	
+	if dialogue_line.character==str(PlayerStats.Nombre)+"(Feliz)":
+		portrail.texture=preload("res://Assets/Portrail/prota_felis.png")
+	if dialogue_line.character==str(PlayerStats.Nombre)+"(OMG)":
+		portrail.texture=preload("res://Assets/Portrail/prota_omg.png")
+	if dialogue_line.character==str(PlayerStats.Nombre):
+		portrail.texture=preload("res://Assets/Portrail/prota.png")
+	
+	
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
 
