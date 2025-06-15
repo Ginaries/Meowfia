@@ -68,7 +68,7 @@ escape={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogos/Dialogo Inicial.dialogue", "res://Dialogos/Comerciante.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogos/Dialogo Inicial.dialogue", "res://Dialogos/Comerciante.dialogue", "res://Dialogos/DialogoCombate.dialogue")
 
 [layer_names]
 

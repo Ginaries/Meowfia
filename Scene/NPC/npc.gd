@@ -4,10 +4,15 @@ extends CharacterBody2D
 var Speak:bool=false
 const DIALOGO_INICIAL = preload("res://Dialogos/Dialogo Inicial.dialogue")
 var player:CharacterBody2D
-@onready var label: Label = $Label
+@onready var label: Label = $AnimatedSprite2D/Label
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
 func _ready() -> void:
+	if Name=="Gatita Misteriosa":
+		animated_sprite_2d.play("GatitaMisteriosa")
+	else:
+		animated_sprite_2d.play("default")
 	label.text=Name
 func Hablar():
 	DialogueManager.show_dialogue_balloon(NpcDialogo.BDialTuto,NpcDialogo.DialogosTuto[NpcDialogo.IndiceTuto])

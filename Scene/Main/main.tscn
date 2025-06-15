@@ -19,7 +19,7 @@ position = Vector2(1036, 656)
 
 [node name="NPC" parent="." instance=ExtResource("2_c5csi")]
 position = Vector2(320, 775)
-Name = "Michita"
+Name = "Gatita Misteriosa"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

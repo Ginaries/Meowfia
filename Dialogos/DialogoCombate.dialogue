@@ -1,0 +1,7 @@
+~ Dialogo_Pelea
+{{PlayerStats.Nombre}}: !!!
+%25 Michi 1: ¡Tú, {{PlayerStats.Nombre}}, a pelear!
+%25 Michi 1: ¡Te ganaré!
+%25 Michi 1: ¡¿Quieres robarme?!
+%25 Michi 1: ¡Esa chatarra será mía!
+=> END
