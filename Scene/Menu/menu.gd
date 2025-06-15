@@ -1,12 +1,14 @@
 extends Control
-@onready var ingrese_nombre: LineEdit = $CartelNombre/VBoxContainer/IngreseNombre
+@onready var ingrese_nombre: LineEdit = $Ingresa/IngreseNombre
 @onready var menu: Control = $"."
-@onready var cartel_nombre: PanelContainer = $CartelNombre
 @onready var start: Button = $VBoxContainer/Start
 @onready var salir: Button = $VBoxContainer/Salir
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var cartel_nombre: Control = $Ingresa
 
 
 func _ready():
+	animation_player.play("modulacion")
 	start.disabled=false
 	salir.disabled=false
 	# Nos aseguramos de que sea visible
@@ -36,3 +38,8 @@ func _on_aceptar_pressed() -> void:
 func _on_start_pressed() -> void:
 	cartel_nombre.visible=true
 	start.disabled=true
+	salir.disabled=true
+
+
+func _on_salir_pressed() -> void:
+	get_tree().quit()

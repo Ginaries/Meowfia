@@ -1,7 +1,7 @@
 extends Node
 
 
-var Nombre:String
+var Nombre:String="Pepito"
 var Nivel:int=1
 var Hambre=100
 var Monedas:int = 0
@@ -60,10 +60,11 @@ func subir_de_nivel():
 #---------------------COMBATE Y LOOT DE ENEMIGOS-------------------------------------
 
 func recibir_daño(cantidad: int):
-	Hambre = max(0, Hambre - cantidad)
+	Alimentacion = max(0, Alimentacion - cantidad)
+	print(Alimentacion)
 
-func atacar_enemigo(enemigo):
-	enemigo.recibir_daño(Ataque)
+func atacar_enemigo():
+	EnemigosStats.SaludActual -= Ataque
 
 func derrotar_enemigo(exp:int=EnemigosStats.ExpOfrecida):
 	ganar_experiencia(exp)

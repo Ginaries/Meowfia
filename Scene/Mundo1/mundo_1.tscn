@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b20bpdxynqru"]
+[gd_scene load_steps=8 format=3 uid="uid://b20bpdxynqru"]
 
 [ext_resource type="Script" uid="uid://dh26hma0f3d13" path="res://Scene/Mundo1/mundo_1.gd" id="1_pijtp"]
 [ext_resource type="PackedScene" uid="uid://bglkuw3ume551" path="res://Scene/Player/player.tscn" id="1_r1u74"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://6epnl845p8a0" path="res://Scene/Hud/canvas_layer.gd" id="4_ydd2s"]
 [ext_resource type="Texture2D" uid="uid://ccaw05womynpr" path="res://Assets/Hub/Moneda.png" id="5_hgbl3"]
 [ext_resource type="PackedScene" uid="uid://niqw8radsakf" path="res://Scene/TachoDeBasura/tacho_de_basura.tscn" id="6_hgbl3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p0im4"]
+radius = 834.101
 
 [node name="Mundo 1" type="Node2D"]
 script = ExtResource("1_pijtp")
@@ -55,3 +58,14 @@ offset_bottom = 52.0
 
 [node name="TachoDeBasura" parent="." instance=ExtResource("6_hgbl3")]
 position = Vector2(975, 184)
+
+[node name="Spawn" type="Area2D" parent="."]
+position = Vector2(1928, 1072)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn"]
+shape = SubResource("CircleShape2D_p0im4")
+
+[node name="Timer" type="Timer" parent="Spawn"]
+
+[connection signal="body_entered" from="Spawn" to="." method="_on_spawn_body_entered"]
+[connection signal="timeout" from="Spawn/Timer" to="." method="_on_timer_timeout"]

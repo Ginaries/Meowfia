@@ -1,10 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnbm5sv3pdbgs"]
+[gd_scene load_steps=10 format=3 uid="uid://dnbm5sv3pdbgs"]
 
 [ext_resource type="Script" uid="uid://cdyhk3bmtx4h0" path="res://Scene/Menu/menu.gd" id="1_bpl5o"]
 [ext_resource type="Texture2D" uid="uid://hhro3ct4qyko" path="res://Assets/Hub/boton jugar menu.png" id="2_k2gvh"]
+[ext_resource type="Texture2D" uid="uid://bosabnqb8y4we" path="res://Assets/Hub/logo_texto_meowfia.png" id="2_mj7sh"]
+[ext_resource type="Texture2D" uid="uid://bl5o32aft7jye" path="res://Assets/Hub/boton salir menu.png" id="4_y5cl3"]
+[ext_resource type="Texture2D" uid="uid://blltpw2aix58p" path="res://Assets/Hub/elegir_nombre.png" id="5_y5cl3"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2gvh"]
-bg_color = Color(0.6, 0.862745, 0.6, 1)
+[sub_resource type="Animation" id="Animation_mj7sh"]
+resource_name = "modulacion"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.99, 1.99, 3.01, 4.05, 5, 6, 7.01, 8.01, 9.02, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.619782, 0.369832, 0.326365, 1), Color(0.761017, 9.06783e-05, 0.626541, 1), Color(0.540926, 0.123159, 1, 1), Color(0, 0.473155, 0.723336, 1), Color(3.36915e-07, 0.512985, 0.514284, 1), Color(0, 0.544141, 0.0880555, 1), Color(0.491617, 0.457882, 0, 1), Color(0.654607, 0.363219, 3.85046e-07, 1), Color(0.827054, 0.101274, 0, 1), Color(0.81623, 0, 0.379025, 1), Color(0.608848, 0.364748, 0.415403, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y5cl3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.619782, 0.369832, 0.326365, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nms3e"]
+_data = {
+&"RESET": SubResource("Animation_y5cl3"),
+&"modulacion": SubResource("Animation_mj7sh")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5cl3"]
+bg_color = Color(0.678431, 0.584314, 0.580392, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -26,7 +68,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.709391, 0.31373, 0, 1)
+color = Color(0.619782, 0.369832, 0.326365, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -35,80 +77,75 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -118.0
-offset_top = -101.5
-offset_right = 118.0
-offset_bottom = 101.5
+offset_left = -255.0
+offset_top = -27.0
+offset_right = 253.0
+offset_bottom = 289.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 200
+theme_override_constants/separation = 100
 
-[node name="TITULO" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 100
-text = "MEOWFIA"
+[node name="LogoTextoMeowfia" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(236, -211)
+texture = ExtResource("2_mj7sh")
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 40
 icon = ExtResource("2_k2gvh")
 flat = true
 
 [node name="Salir" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
-text = "Salir"
+icon = ExtResource("4_y5cl3")
+flat = true
 
-[node name="CartelNombre" type="PanelContainer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ColorRect")
+libraries = {
+&"": SubResource("AnimationLibrary_nms3e")
+}
+
+[node name="Ingresa" type="Control" parent="."]
 visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -570.0
-offset_top = -133.5
-offset_right = 570.0
-offset_bottom = 133.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_k2gvh")
+anchors_preset = 0
+offset_left = 556.0
+offset_top = 537.0
+offset_right = 596.0
+offset_bottom = 577.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CartelNombre"]
-layout_mode = 2
-theme_override_constants/separation = 50
+[node name="Sprite2D" type="Sprite2D" parent="Ingresa"]
+position = Vector2(386.5, 64.5)
+scale = Vector2(1.31375, 1.3625)
+texture = ExtResource("5_y5cl3")
 
-[node name="HSeparator2" type="HSeparator" parent="CartelNombre/VBoxContainer"]
-layout_mode = 2
+[node name="Aceptar" type="Button" parent="Ingresa"]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 153.0
+offset_right = 503.0
+offset_bottom = 231.0
+flat = true
 
-[node name="CartelTitulo" type="Label" parent="CartelNombre/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 50
-text = "   Ingrese Como quiere que se llame su personaje   "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="IngreseNombre" type="LineEdit" parent="CartelNombre/VBoxContainer"]
+[node name="IngreseNombre" type="LineEdit" parent="Ingresa"]
 custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
+offset_left = 84.0
+offset_top = 26.0
+offset_right = 884.0
+offset_bottom = 103.0
+scale = Vector2(0.769233, 0.9618)
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxFlat_y5cl3")
 placeholder_text = "Click Aqui"
 alignment = 1
-
-[node name="Aceptar" type="Button" parent="CartelNombre/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_font_sizes/font_size = 40
-text = "Aceptar"
-icon_alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="CartelNombre/VBoxContainer"]
-layout_mode = 2
+flat = true
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="CartelNombre/VBoxContainer/Aceptar" to="." method="_on_aceptar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="Ingresa/Aceptar" to="." method="_on_aceptar_pressed"]

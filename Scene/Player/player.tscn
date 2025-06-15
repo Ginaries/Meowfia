@@ -54,7 +54,7 @@ position = Vector2(0.499985, 0.5)
 scale = Vector2(1.002, 1.002)
 sprite_frames = SubResource("SpriteFrames_g0r71")
 animation = &"Frente"
-frame_progress = 0.72426
+frame_progress = 0.570441
 
 [node name="Dialogar" type="Area2D" parent="."]
 

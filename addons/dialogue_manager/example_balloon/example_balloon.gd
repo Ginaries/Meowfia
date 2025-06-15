@@ -52,6 +52,13 @@ var mutation_cooldown: Timer = Timer.new()
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
 @onready var portrail: TextureRect = $Balloon/Portrail
+var player_name: String = str(PlayerStats.Nombre)
+var portraits: Dictionary = {
+	str(PlayerStats.Nombre): preload("res://Assets/Portrail/prota.png"),
+	str(PlayerStats.Nombre)+"(Feliz)": preload("res://Assets/Portrail/prota_felis.png"),
+	str(PlayerStats.Nombre)+"(OMG)": preload("res://Assets/Portrail/prota_omg.png"),
+	# Agregá más acá según los nombres que uses en dialogue_line.character
+}
 
 
 
@@ -101,13 +108,14 @@ func apply_dialogue_line() -> void:
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
 	
-	if dialogue_line.character==str(PlayerStats.Nombre)+"(Feliz)":
-		portrail.texture=preload("res://Assets/Portrail/prota_felis.png")
-	if dialogue_line.character==str(PlayerStats.Nombre)+"(OMG)":
-		portrail.texture=preload("res://Assets/Portrail/prota_omg.png")
-	if dialogue_line.character==str(PlayerStats.Nombre):
-		portrail.texture=preload("res://Assets/Portrail/prota.png")
-	
+	var character_name := dialogue_line.character
+
+	# Si existe un retrato con ese nombre, lo muestra
+	if portraits.has(character_name):
+		portrail.texture = portraits[character_name]
+	else:
+		portrail.texture = null  # O dejalo como estaba
+
 	
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line

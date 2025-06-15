@@ -16,6 +16,8 @@ func _on_dialogo_terminado(_resource):
 
 
 func _physics_process(delta: float) -> void:
+	if Hablando==true:
+		return
 	var input_vector := Vector2(
 		Input.get_axis("izq", "der"),
 		Input.get_axis("arriba", "abajo")
