@@ -5,19 +5,19 @@ Gatita Chef: ¿Por qué no le échas un vistazo?
 - Muéstrame lo que tienes.
 	Gatita Chef : Tienes[color=yellow] {{PlayerStats.MichiMonedas}} MichiMonedas[/color].
 	Gatita Chef: ¿Qué te gustaría comprar?
-	- Michigalletas [color=yellow]x 3 MichiMonedas[/color].
+	- Michigalletas X 3 MichiMonedas
 		do PlayerStats.Curar(5) 
 		set PlayerStats.MichiMonedas -= 5
 		=> Saludo_Chef
-	- Pescaditos Deliciosos [color=yellow]x 10 MichiMonedas[/color].
+	- Pescaditos Deliciosos X 10 MichiMonedas
 		set PlayerStats.MichiMonedas -= 10
 		do PlayerStats.Curar(10)
 		=> Saludo_Chef
-	- Sobre de Mhiskas [color=yellow]X 30 MichiMonedas[/color].
+	- Sobre de Mhiskas X 30 MichiMonedas
 		set PlayerStats.MichiMonedas -= 30
 		do PlayerStats.Curar(15)
 		=> Saludo_Chef
-	- SuperMichi Dulce [color=yellow]X 50 MichiMonedas[/color].
+	- SuperMichi Dulce X 50 MichiMonedas
 		set PlayerStats.MichiMonedas -= 50
 		do PlayerStats.Curar(20)
 		=> Saludo_Chef
