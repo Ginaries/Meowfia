@@ -8,6 +8,7 @@ El gran Comerciante: Si...
 El gran Comerciante: Que necesitas? Tienes chatarra para intercambiar? Espero que sea de gran valor...
 - Lata
 	El gran Comerciante : Tienes {{PlayerStats.inventario["Lata"]}} Lata
+	
 - Hueso
 	El gran Comerciante : Tienes {{PlayerStats.inventario["Hueso"]}} Hueso
 - Trapo
