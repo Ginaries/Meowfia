@@ -2,7 +2,7 @@ extends Node
 
 var Nombre:String
 var IconSelect:Texture
-var Icons:Array[Texture]=[]
+var Icons:Array[Texture]=[preload("res://Assets/Sprites/enemigo_1.png")]
 var TiposRareza:Array[String]=["Comun","Poco Comun","Raro","Mitico","Legendario"]
 var Rareza:String
 var PosibilidadNombre:Array[String]=["Fabi","Santi","Laura"]
@@ -15,7 +15,18 @@ var time_atack:float
 func ElegimosEnemigo():
 	Nombre = PosibilidadNombre.pick_random()
 	Rareza = generar_rareza_con_probabilidad()
-
+	#___________ICONS_______
+	if Rareza=="Comun":
+		IconSelect=Icons[0]
+	if Rareza=="Poco Comun":
+		IconSelect=Icons[0]
+	if Rareza=="Raro":
+		IconSelect=Icons[0]
+	if Rareza=="Mitico":
+		IconSelect=Icons[0]
+	if Rareza=="Legendario":
+		IconSelect=Icons[0]
+	
 	var multiplicador_rareza = {
 		"Comun": 1.0,
 		"Poco Comun": 1.3,

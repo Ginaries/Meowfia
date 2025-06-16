@@ -1,17 +1,61 @@
-[gd_scene load_steps=10 format=3 uid="uid://bglkuw3ume551"]
+[gd_scene load_steps=17 format=3 uid="uid://bglkuw3ume551"]
 
 [ext_resource type="Texture2D" uid="uid://ka31stl2ji3x" path="res://icon.svg" id="1_67a6e"]
 [ext_resource type="Script" uid="uid://dnhc2cr7htbm3" path="res://Scene/Player/player.gd" id="1_yic5t"]
-[ext_resource type="Texture2D" uid="uid://dnc468xoh4glv" path="res://Assets/michi_nuevo2.png" id="2_88wa8"]
-[ext_resource type="Texture2D" uid="uid://c1yg517lhq4h0" path="res://Assets/michi_nuevo.png" id="3_jd8gp"]
-[ext_resource type="Texture2D" uid="uid://dyfwxgggy3ltx" path="res://Assets/michi_nuevo3.png" id="4_ewflj"]
+[ext_resource type="Texture2D" uid="uid://dnc468xoh4glv" path="res://Assets/Sprites/michi_nuevo2.png" id="2_88wa8"]
+[ext_resource type="Texture2D" uid="uid://dj5vgf5m0rqeu" path="res://Assets/Sprites/michi_espaldas2.png" id="2_hklmv"]
+[ext_resource type="Texture2D" uid="uid://c1yg517lhq4h0" path="res://Assets/Sprites/michi_nuevo.png" id="3_jd8gp"]
+[ext_resource type="Texture2D" uid="uid://dy3wcgv1unb28" path="res://Assets/Sprites/michi_espaldas1.png" id="3_wagb4"]
+[ext_resource type="Texture2D" uid="uid://dyfwxgggy3ltx" path="res://Assets/Sprites/michi_nuevo3.png" id="4_ewflj"]
+[ext_resource type="Texture2D" uid="uid://c6reh5igo6e81" path="res://Assets/Sprites/michi_espaldas3.png" id="4_fst78"]
+[ext_resource type="Texture2D" uid="uid://b3olw7an3ojgx" path="res://Assets/Sprites/michi_der1.png" id="5_rkjca"]
+[ext_resource type="Texture2D" uid="uid://cam53esw14wlr" path="res://Assets/Sprites/michi_der2.png" id="6_y7m07"]
+[ext_resource type="Texture2D" uid="uid://cr5rurrd35t0l" path="res://Assets/Sprites/michi_der3.png" id="7_jugs6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uuj77"]
-radius = 64.5
-height = 129.0
+radius = 26.0
+height = 52.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w02sr"]
+atlas = ExtResource("3_wagb4")
+region = Rect2(0, 0, 400, 400)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g0r71"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hklmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w02sr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fst78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w02sr")
+}],
+"loop": true,
+"name": &"Atras",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_rkjca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y7m07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jugs6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y7m07")
+}],
+"loop": true,
+"name": &"Der",
+"speed": 7.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_88wa8")
@@ -21,9 +65,20 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_ewflj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jd8gp")
 }],
 "loop": true,
 "name": &"Frente",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jd8gp")
+}],
+"loop": true,
+"name": &"Idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -36,25 +91,23 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yic5t"]
-radius = 118.106
+radius = 91.022
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uuj77"]
-radius = 119.206
+radius = 91.022
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_yic5t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0.5)
+position = Vector2(1, 34)
 shape = SubResource("CapsuleShape2D_uuj77")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(3.41728e-06, 0.465167, 0.614284, 1)
-position = Vector2(0.499985, 0.5)
-scale = Vector2(1.002, 1.002)
+scale = Vector2(0.40725, 0.32975)
 sprite_frames = SubResource("SpriteFrames_g0r71")
-animation = &"Frente"
-frame_progress = 0.570441
+animation = &"Idle"
 
 [node name="Dialogar" type="Area2D" parent="."]
 

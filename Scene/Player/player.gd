@@ -7,25 +7,45 @@ var npc_cercano
 var Basurero_cerca
 var Hablando:bool=false
 var Basurero:bool=false
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	DialogueManager.connect("dialogue_ended", Callable(self, "_on_dialogo_terminado"))
+	global_position = PlayerStats.ultima_posicion
+
 
 func _on_dialogo_terminado(_resource):
 	Hablando = false
 
 
 func _physics_process(delta: float) -> void:
-	if Hablando==true:
+	if Hablando:
+		$AnimatedSprite2D.play("Idle")  # o detener animación si querés
 		return
+
 	var input_vector := Vector2(
 		Input.get_axis("izq", "der"),
 		Input.get_axis("arriba", "abajo")
 	).normalized()
 
 	velocity = input_vector * SPEED
-	
 	move_and_slide()
+
+	if input_vector != Vector2.ZERO:
+		if abs(input_vector.x) > abs(input_vector.y):
+			# Movimiento horizontal
+			$AnimatedSprite2D.play("Der")
+			$AnimatedSprite2D.flip_h = input_vector.x < 0  # Flip si va a la izquierda
+		else:
+			# Movimiento vertical
+			if input_vector.y > 0:
+				$AnimatedSprite2D.play("Frente")
+			else:
+				$AnimatedSprite2D.play("Atras")
+	else:
+		$AnimatedSprite2D.play("Idle")
+	
+	PlayerStats.ultima_posicion=global_position
 
 	
 func _input(event):

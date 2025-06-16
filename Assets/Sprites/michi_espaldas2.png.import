@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bavjwyvt5r6r0"
-path="res://.godot/imported/moneda.png-15f52f77aea95f39d685f11956b6f25d.ctex"
+uid="uid://dj5vgf5m0rqeu"
+path="res://.godot/imported/michi_espaldas2.png-45ac93433a156b952ff9d21650f4e03f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Hub/moneda.png"
-dest_files=["res://.godot/imported/moneda.png-15f52f77aea95f39d685f11956b6f25d.ctex"]
+source_file="res://Assets/Sprites/michi_espaldas2.png"
+dest_files=["res://.godot/imported/michi_espaldas2.png-45ac93433a156b952ff9d21650f4e03f.ctex"]
 
 [params]
 

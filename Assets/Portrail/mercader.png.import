@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnc468xoh4glv"
-path="res://.godot/imported/michi_nuevo2.png-5484f243a66f91907ddcbdd13a6c64c7.ctex"
+uid="uid://dfa0j7glkubrs"
+path="res://.godot/imported/mercader.png-47deb466834625390490e544fcdcd164.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/michi_nuevo2.png"
-dest_files=["res://.godot/imported/michi_nuevo2.png-5484f243a66f91907ddcbdd13a6c64c7.ctex"]
+source_file="res://Assets/Portrail/mercader.png"
+dest_files=["res://.godot/imported/mercader.png-47deb466834625390490e544fcdcd164.ctex"]
 
 [params]
 

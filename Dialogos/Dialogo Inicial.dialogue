@@ -10,6 +10,7 @@ Gatita Misteriosa: Te encuentras en el mundo de "Meowfia". => END
 Gatita Misteriosa: Se nota que tienes hambre. ¿Por qué no tomas este [shake rate=20 level=10]pescado[/shake]?
 - Tomar pescado
 	{{PlayerStats.Nombre}}: Gracias...
+	do PlayerStats.Curar(100)
 	Gatita Misteriosa: Te ayudarán a mantenerte vivo. Llenarán tu barra de hambre. => END
 
 #Se puede hacer que le den un pescado para que se le llene la barra de hambre? SI

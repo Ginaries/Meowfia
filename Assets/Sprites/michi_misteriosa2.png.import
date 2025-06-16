@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vstvaau2i2e2"
-path="res://.godot/imported/michi_misteriosa.png-7145ddf247c9d3f55e279141ede5b9cb.ctex"
+uid="uid://1gb81p6crt7y"
+path="res://.godot/imported/michi_misteriosa2.png-b2bdf0fafb9df5740921466ab990a69a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/michi_misteriosa.png"
-dest_files=["res://.godot/imported/michi_misteriosa.png-7145ddf247c9d3f55e279141ede5b9cb.ctex"]
+source_file="res://Assets/Sprites/michi_misteriosa2.png"
+dest_files=["res://.godot/imported/michi_misteriosa2.png-b2bdf0fafb9df5740921466ab990a69a.ctex"]
 
 [params]
 

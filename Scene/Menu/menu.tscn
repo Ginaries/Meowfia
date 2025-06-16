@@ -6,6 +6,21 @@
 [ext_resource type="Texture2D" uid="uid://bl5o32aft7jye" path="res://Assets/Hub/boton salir menu.png" id="4_y5cl3"]
 [ext_resource type="Texture2D" uid="uid://blltpw2aix58p" path="res://Assets/Hub/elegir_nombre.png" id="5_y5cl3"]
 
+[sub_resource type="Animation" id="Animation_y5cl3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.619782, 0.369832, 0.326365, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_mj7sh"]
 resource_name = "modulacion"
 length = 10.0
@@ -21,21 +36,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(0.619782, 0.369832, 0.326365, 1), Color(0.761017, 9.06783e-05, 0.626541, 1), Color(0.540926, 0.123159, 1, 1), Color(0, 0.473155, 0.723336, 1), Color(3.36915e-07, 0.512985, 0.514284, 1), Color(0, 0.544141, 0.0880555, 1), Color(0.491617, 0.457882, 0, 1), Color(0.654607, 0.363219, 3.85046e-07, 1), Color(0.827054, 0.101274, 0, 1), Color(0.81623, 0, 0.379025, 1), Color(0.608848, 0.364748, 0.415403, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_y5cl3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.619782, 0.369832, 0.326365, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nms3e"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1gb81p6crt7y"
-path="res://.godot/imported/michi_misteriosa2.png-707ca891ca139acb9dafdd756f83bb95.ctex"
+uid="uid://ckfpbwhcl7sv1"
+path="res://.godot/imported/tacho_basura.png-239121b4372119f6851b4c91c7cf8eb8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/michi_misteriosa2.png"
-dest_files=["res://.godot/imported/michi_misteriosa2.png-707ca891ca139acb9dafdd756f83bb95.ctex"]
+source_file="res://Assets/Basura/tacho_basura.png"
+dest_files=["res://.godot/imported/tacho_basura.png-239121b4372119f6851b4c91c7cf8eb8.ctex"]
 
 [params]
 

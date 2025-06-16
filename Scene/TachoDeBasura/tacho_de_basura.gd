@@ -1,11 +1,15 @@
 extends Area2D
 @onready var recargado: Timer = $Recargado
+@onready var icon: Sprite2D = $Icon
 
 var lleno:bool=true
+var icons:Array[Texture]=[preload("res://Assets/Basura/tacho_basura.png"), preload("res://Assets/Basura/tacho_basura_abierto.png")]
 
+func _ready() -> void:
+	icon.texture=icons[0]
 func Buscar():
 	if lleno:
-		#animacion
+		icon.texture=icons[1]
 		PlayerStats.revolver_basura()
 		print(PlayerStats.inventario)
 		lleno=false
@@ -15,3 +19,4 @@ func Buscar():
 
 func _on_recargado_timeout() -> void:
 	lleno=true
+	icon.texture=icons[0]

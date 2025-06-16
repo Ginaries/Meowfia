@@ -1,5 +1,6 @@
 extends Node
 
+var ultima_posicion: Vector2 = Vector2.ZERO
 
 var Nombre:String="Pepito"
 var Nivel:int=1

@@ -1,11 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://b20bpdxynqru"]
+[gd_scene load_steps=12 format=3 uid="uid://b20bpdxynqru"]
 
 [ext_resource type="Script" uid="uid://dh26hma0f3d13" path="res://Scene/Mundo1/mundo_1.gd" id="1_pijtp"]
 [ext_resource type="PackedScene" uid="uid://bglkuw3ume551" path="res://Scene/Player/player.tscn" id="1_r1u74"]
 [ext_resource type="PackedScene" uid="uid://d26xu4bujhhr1" path="res://Scene/NPC/npc.tscn" id="2_bxldh"]
+[ext_resource type="Script" uid="uid://c4mbfa5kr1sj1" path="res://Scene/Edificio/edificio_1.gd" id="2_p0im4"]
 [ext_resource type="Script" uid="uid://6epnl845p8a0" path="res://Scene/Hud/canvas_layer.gd" id="4_ydd2s"]
-[ext_resource type="Texture2D" uid="uid://ccaw05womynpr" path="res://Assets/Hub/Moneda.png" id="5_hgbl3"]
+[ext_resource type="Texture2D" uid="uid://bavjwyvt5r6r0" path="res://Assets/Hub/moneda.png" id="5_hgbl3"]
 [ext_resource type="PackedScene" uid="uid://niqw8radsakf" path="res://Scene/TachoDeBasura/tacho_de_basura.tscn" id="6_hgbl3"]
+[ext_resource type="Texture2D" uid="uid://c07wuokvvadbu" path="res://Assets/Edificio/edificiomuchasventanas.png" id="7_srwvq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0im4"]
+size = Vector2(326, 139)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr0ch"]
+size = Vector2(473, 600)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p0im4"]
 radius = 834.101
@@ -13,10 +21,29 @@ radius = 834.101
 [node name="Mundo 1" type="Node2D"]
 script = ExtResource("1_pijtp")
 
+[node name="Edificio 1" type="StaticBody2D" parent="."]
+position = Vector2(708, -346)
+script = ExtResource("2_p0im4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Edificio 1"]
+texture = ExtResource("7_srwvq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edificio 1"]
+position = Vector2(-10, 283.5)
+shape = SubResource("RectangleShape2D_p0im4")
+
+[node name="Area2D" type="Area2D" parent="Edificio 1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edificio 1/Area2D"]
+position = Vector2(-7, -35)
+shape = SubResource("RectangleShape2D_nr0ch")
+
 [node name="Player" parent="." instance=ExtResource("1_r1u74")]
 position = Vector2(994, 497)
+scale = Vector2(0.503734, 0.436672)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 20.0
 drag_horizontal_enabled = true
@@ -27,19 +54,23 @@ drag_right_margin = 0.15
 drag_bottom_margin = 0.15
 
 [node name="NPC" parent="." instance=ExtResource("2_bxldh")]
-position = Vector2(334, 443)
+position = Vector2(561, 5)
+scale = Vector2(0.336327, 0.283604)
 Name = "Gatita Misteriosa"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("4_ydd2s")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -233.0
-offset_bottom = 200.0
+offset_left = -254.0
+offset_top = 4.0
+offset_right = 246.0
+offset_bottom = 577.0
 grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
@@ -49,6 +80,10 @@ texture = ExtResource("5_hgbl3")
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
 offset_left = 37.0
@@ -58,6 +93,7 @@ offset_bottom = 52.0
 
 [node name="TachoDeBasura" parent="." instance=ExtResource("6_hgbl3")]
 position = Vector2(975, 184)
+scale = Vector2(0.497455, 0.490187)
 
 [node name="Spawn" type="Area2D" parent="."]
 position = Vector2(1928, 1072)
@@ -67,5 +103,7 @@ shape = SubResource("CircleShape2D_p0im4")
 
 [node name="Timer" type="Timer" parent="Spawn"]
 
+[connection signal="body_entered" from="Edificio 1/Area2D" to="Edificio 1" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Edificio 1/Area2D" to="Edificio 1" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Spawn" to="." method="_on_spawn_body_entered"]
 [connection signal="timeout" from="Spawn/Timer" to="." method="_on_timer_timeout"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bavjwyvt5r6r0"
-path="res://.godot/imported/moneda.png-15f52f77aea95f39d685f11956b6f25d.ctex"
+uid="uid://d2vcy2x8tr0qu"
+path="res://.godot/imported/recluta_1.png-668fbd16b3bc22ac6d03c9a45edd89fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Hub/moneda.png"
-dest_files=["res://.godot/imported/moneda.png-15f52f77aea95f39d685f11956b6f25d.ctex"]
+source_file="res://Assets/Portrail/recluta_1.png"
+dest_files=["res://.godot/imported/recluta_1.png-668fbd16b3bc22ac6d03c9a45edd89fe.ctex"]
 
 [params]
 

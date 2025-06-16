@@ -2,6 +2,7 @@ extends Node2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var recibe_ataque: Timer = $"Recibe ataque"
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var EnemigoActivo:bool=false
 @onready var vida: Label = $ProgressBar/Vida
@@ -33,5 +34,6 @@ func _on_atacar_pressed() -> void:
 
 
 func _on_recibe_ataque_timeout() -> void:
+	animation_player.play("atacar")
 	EnemigosStats.Atacar()
 	recibe_ataque.start(EnemigosStats.time_atack)

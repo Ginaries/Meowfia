@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bavjwyvt5r6r0"
-path="res://.godot/imported/moneda.png-15f52f77aea95f39d685f11956b6f25d.ctex"
+uid="uid://cr5rurrd35t0l"
+path="res://.godot/imported/michi_der3.png-68fa9b1d35f8d14485b17f44a1369b6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Hub/moneda.png"
-dest_files=["res://.godot/imported/moneda.png-15f52f77aea95f39d685f11956b6f25d.ctex"]
+source_file="res://Assets/Sprites/michi_der3.png"
+dest_files=["res://.godot/imported/michi_der3.png-68fa9b1d35f8d14485b17f44a1369b6d.ctex"]
 
 [params]
 
