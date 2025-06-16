@@ -1,19 +1,21 @@
-[gd_scene load_steps=15 format=3 uid="uid://b20bpdxynqru"]
+[gd_scene load_steps=17 format=3 uid="uid://b20bpdxynqru"]
 
 [ext_resource type="Script" uid="uid://dh26hma0f3d13" path="res://Scene/Mundo1/mundo_1.gd" id="1_pijtp"]
 [ext_resource type="PackedScene" uid="uid://bglkuw3ume551" path="res://Scene/Player/player.tscn" id="1_r1u74"]
-[ext_resource type="PackedScene" uid="uid://d26xu4bujhhr1" path="res://Scene/NPC/npc.tscn" id="2_bxldh"]
+[ext_resource type="PackedScene" uid="uid://d26xu4bujhhr1" path="res://Scene/NPC/Gatita Misteriosa.tscn" id="2_bxldh"]
 [ext_resource type="Script" uid="uid://c4mbfa5kr1sj1" path="res://Scene/Edificio/edificio_1.gd" id="2_p0im4"]
+[ext_resource type="Texture2D" uid="uid://6ipxbtlsj4fj" path="res://Assets/Edificio/edificioconescaleras.png" id="4_nr0ch"]
 [ext_resource type="Script" uid="uid://6epnl845p8a0" path="res://Scene/Hud/canvas_layer.gd" id="4_ydd2s"]
-[ext_resource type="Texture2D" uid="uid://xuxgemn5nuyv" path="res://Assets/Hub/moneda.png" id="5_hgbl3"]
+[ext_resource type="Texture2D" uid="uid://xuxgemn5nuyv" path="res://Assets/Hub/Moneda.png" id="5_hgbl3"]
 [ext_resource type="PackedScene" uid="uid://niqw8radsakf" path="res://Scene/TachoDeBasura/tacho_de_basura.tscn" id="6_hgbl3"]
 [ext_resource type="Texture2D" uid="uid://c07wuokvvadbu" path="res://Assets/Edificio/edificiomuchasventanas.png" id="7_srwvq"]
+[ext_resource type="PackedScene" uid="uid://ndfgx68gr41i" path="res://Scene/NPC/Mercader.tscn" id="9_rx4lw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0im4"]
 size = Vector2(326, 139)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nr0ch"]
-size = Vector2(473, 600)
+size = Vector2(492.5, 600)
 
 [sub_resource type="Animation" id="Animation_p0im4"]
 resource_name = "Mostrar"
@@ -72,7 +74,26 @@ shape = SubResource("RectangleShape2D_p0im4")
 [node name="Area2D" type="Area2D" parent="Edificio 1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Edificio 1/Area2D"]
-position = Vector2(-7, -35)
+position = Vector2(2.75, -35)
+shape = SubResource("RectangleShape2D_nr0ch")
+
+[node name="Edificio 2" type="StaticBody2D" parent="."]
+position = Vector2(1309, -353)
+script = ExtResource("2_p0im4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Edificio 2"]
+position = Vector2(-7.49993, 38)
+scale = Vector2(1.23922, 1.11377)
+texture = ExtResource("4_nr0ch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edificio 2"]
+position = Vector2(-10, 283.5)
+shape = SubResource("RectangleShape2D_p0im4")
+
+[node name="Area2D" type="Area2D" parent="Edificio 2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edificio 2/Area2D"]
+position = Vector2(2.75, -35)
 shape = SubResource("RectangleShape2D_nr0ch")
 
 [node name="Player" parent="." instance=ExtResource("1_r1u74")]
@@ -89,11 +110,6 @@ drag_left_margin = 0.15
 drag_top_margin = 0.15
 drag_right_margin = 0.15
 drag_bottom_margin = 0.15
-
-[node name="NPC" parent="." instance=ExtResource("2_bxldh")]
-position = Vector2(561, 5)
-scale = Vector2(0.336327, 0.283604)
-Name = "Gatita Misteriosa"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("4_ydd2s")
@@ -116,6 +132,7 @@ texture = ExtResource("5_hgbl3")
 [node name="Moneda" type="Label" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.44895, 5.47487e-07, 1.44392e-07, 1)
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 1
@@ -127,6 +144,7 @@ offset_left = 37.0
 offset_top = 25.0
 offset_right = 294.0
 offset_bottom = 52.0
+theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 offset_left = -237.0
@@ -137,6 +155,7 @@ offset_bottom = 364.0
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
 text = "Inventario"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
@@ -146,6 +165,7 @@ layout_mode = 2
 
 [node name="Lata" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -154,6 +174,7 @@ layout_mode = 2
 
 [node name="Hueso" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -162,6 +183,7 @@ layout_mode = 2
 
 [node name="Trapo" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -170,6 +192,7 @@ layout_mode = 2
 
 [node name="Botella" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -178,6 +201,7 @@ layout_mode = 2
 
 [node name="Garra" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer5"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -186,6 +210,7 @@ layout_mode = 2
 
 [node name="Colmillo" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer6"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -194,6 +219,7 @@ layout_mode = 2
 
 [node name="Escama" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer7"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -202,14 +228,35 @@ layout_mode = 2
 
 [node name="Cristal Oscuro" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer8"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 libraries = {
 &"": SubResource("AnimationLibrary_rx4lw")
 }
 
+[node name="Gatita Misteriosa" parent="." instance=ExtResource("2_bxldh")]
+position = Vector2(560, 7)
+scale = Vector2(0.260274, 0.218182)
+
+[node name="Mercader" parent="." instance=ExtResource("9_rx4lw")]
+position = Vector2(1015, -101)
+scale = Vector2(0.277427, 0.249605)
+
 [node name="TachoDeBasura" parent="." instance=ExtResource("6_hgbl3")]
-position = Vector2(975, 184)
+position = Vector2(839, 20)
+scale = Vector2(0.497455, 0.490187)
+
+[node name="TachoDeBasura2" parent="." instance=ExtResource("6_hgbl3")]
+position = Vector2(1153, 22)
+scale = Vector2(0.497455, 0.490187)
+
+[node name="TachoDeBasura3" parent="." instance=ExtResource("6_hgbl3")]
+position = Vector2(914, -95)
+scale = Vector2(0.497455, 0.490187)
+
+[node name="TachoDeBasura4" parent="." instance=ExtResource("6_hgbl3")]
+position = Vector2(1504, -30)
 scale = Vector2(0.497455, 0.490187)
 
 [node name="Spawn" type="Area2D" parent="."]
@@ -222,5 +269,7 @@ shape = SubResource("CircleShape2D_p0im4")
 
 [connection signal="body_entered" from="Edificio 1/Area2D" to="Edificio 1" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Edificio 1/Area2D" to="Edificio 1" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Edificio 2/Area2D" to="Edificio 2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Edificio 2/Area2D" to="Edificio 2" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Spawn" to="." method="_on_spawn_body_entered"]
 [connection signal="timeout" from="Spawn/Timer" to="." method="_on_timer_timeout"]

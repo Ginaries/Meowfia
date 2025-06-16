@@ -4,48 +4,34 @@ Gatita Misteriosa: Parece que no eres de por aquí.
 Gato: ...
 Gato: Hola... Mi nombre es {{PlayerStats.Nombre}}
 {{PlayerStats.Nombre}}: Solo sé que desperté aquí, ¿podrías decirme donde estoy?...
-Gatita Misteriosa: Te encuentras en el mundo de "Meowfia". => END
-
+Gatita Misteriosa: Te encuentras en el mundo de "Meowfia".
 ~ Tutorial_Barra_de_Hambre
 Gatita Misteriosa: Se nota que tienes hambre. ¿Por qué no tomas este [shake rate=20 level=10]pescado[/shake]?
 - Tomar pescado
 	{{PlayerStats.Nombre}}(Feliz): Gracias...
 	do PlayerStats.Curar(100)
-	Gatita Misteriosa: Te ayudarán a mantenerte vivo. Llenarán tu barra de hambre. => END
-
+	Gatita Misteriosa: Te ayudarán a mantenerte vivo. Llenarán tu barra de hambre.
 #Se puede hacer que le den un pescado para que se le llene la barra de hambre? SI
 #Están desfazados los botones de opciones . ok 
 - No tomar
 	{{PlayerStats.Nombre}}(OMG): No confío en tí...
 	Gatita Misteriosa: Te recomiendo que lo tomes.
 	Gatita Misteriosa: Si tu hambre baja podrías [shake rate=20 level=10]morir[/shake]. => Tutorial_Barra_de_Hambre
-
-
-~ Tutorial_Movimiento
-Gatita Misteriosa: Ven, sígueme. Te enseñaré lo necesario para moverte por estos callejones.
-# Se puede clasificar como ruptura de 4ta pared el siguiente diálogo???
-{{PlayerStats.Nombre}}: Esta bien, te sigo.
-Gatita Misteriosa: ...
-Gatita Misteriosa: Podrás moverte por el entorno con las teclas [W], [A], [S] y [D].
-Gatita Misteriosa: ¿Por qué no lo intentas? => END
-#Mismo criterio que con el WASD
-
 ~ Fin_Movimiento
-Gatita Misteriosa: Bien hecho.
+Gatita Misteriosa: Bien.
 Gatita Misteriosa: El momento de desaparecer ha llegado. Suerte!
-Gatita Misteriosa: Ah... casi lo olvido. => Tutorial_Interaccion
-
-~ Tutorial_Interaccion
+Gatita Misteriosa: Ah... casi lo olvido. 
 {{PlayerStats.Nombre}}: ¿Qué cosa?
 Gatita Misteriosa: ¿Ves esos contenedores de ahi?
 Gatita Misteriosa: ¿Por qué no revisas que hay dentro?
 {{PlayerStats.Nombre}}: ...
-Gatita Misteriosa: Acércate a él y presiona [CLICK DERECHO]. => END
-
-~ Fin_Interaccion
+Gatita Misteriosa: Acércate a él y presiona [CLICK IZQUIERDO]. => END
 #este se dispara cuando el personaje interaccione
+
+~ TOCO_BASURA
 {{PlayerStats.Nombre}}: ¿Así?...
-Gatita Misteriosa: Eso es!
+Gatita Misteriosa: Eso es! al interactuar con los tachos de basura, conseguiras Objetos.
+Gatita Misteriosa: Para ver tu inventario presiona [I]. Cuando tengas suficientes, ve a visitar a el [shake rate=20 level=10]Comerciante[/shake] el te dara una mano a sobrevivir
 Gatita Misteriosa: Ahora ya sabes como manejarte por aquí.
 Gatita Misteriosa: Hasta pronto, nos vemos luego... O no.
 Gatita Misteriosa: *Desaparece*

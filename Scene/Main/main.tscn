@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://lwkw0iyspxmt"]
 
 [ext_resource type="PackedScene" uid="uid://bglkuw3ume551" path="res://Scene/Player/player.tscn" id="1_ajaps"]
-[ext_resource type="PackedScene" uid="uid://d26xu4bujhhr1" path="res://Scene/NPC/npc.tscn" id="2_c5csi"]
+[ext_resource type="PackedScene" uid="uid://d26xu4bujhhr1" path="res://Scene/NPC/Gatita Misteriosa.tscn" id="2_c5csi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5csi"]
 size = Vector2(1800, 175)

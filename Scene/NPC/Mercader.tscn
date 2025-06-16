@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://ndfgx68gr41i"]
+
+[ext_resource type="Script" uid="uid://gah2gyf23nmk" path="res://Scene/NPC/mercader.gd" id="1_0ok3j"]
+[ext_resource type="Texture2D" uid="uid://euwne5366kjf" path="res://Assets/Sprites/mercader_idle.png" id="2_qgmo2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cnkqp"]
+radius = 64.6297
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03uqs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qgmo2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2smci"]
+radius = 125.256
+
+[node name="Mercader" type="CharacterBody2D" groups=["npc"]]
+script = ExtResource("1_0ok3j")
+Name = "Comerciante"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cnkqp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.55, 0.458)
+sprite_frames = SubResource("SpriteFrames_03uqs")
+animation = &"idle"
+
+[node name="Label" type="Label" parent="AnimatedSprite2D"]
+offset_left = -113.0
+offset_top = -299.0
+offset_right = 112.0
+offset_bottom = -252.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DetectarPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectarPlayer"]
+shape = SubResource("CircleShape2D_2smci")
+
+[connection signal="body_entered" from="DetectarPlayer" to="." method="_on_detectar_player_body_entered"]
+[connection signal="body_exited" from="DetectarPlayer" to="." method="_on_detectar_player_body_exited"]

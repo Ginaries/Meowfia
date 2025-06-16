@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bglkuw3ume551"]
+[gd_scene load_steps=18 format=3 uid="uid://bglkuw3ume551"]
 
 [ext_resource type="Texture2D" uid="uid://ka31stl2ji3x" path="res://icon.svg" id="1_67a6e"]
 [ext_resource type="Script" uid="uid://dnhc2cr7htbm3" path="res://Scene/Player/player.gd" id="1_yic5t"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b3olw7an3ojgx" path="res://Assets/Sprites/michi_der1.png" id="5_rkjca"]
 [ext_resource type="Texture2D" uid="uid://cam53esw14wlr" path="res://Assets/Sprites/michi_der2.png" id="6_y7m07"]
 [ext_resource type="Texture2D" uid="uid://cr5rurrd35t0l" path="res://Assets/Sprites/michi_der3.png" id="7_jugs6"]
+[ext_resource type="Texture2D" uid="uid://blvjtulqllyfj" path="res://Assets/guia/flecha.png" id="12_wagb4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uuj77"]
 radius = 26.0
@@ -120,6 +121,10 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorBasura"]
 shape = SubResource("CircleShape2D_uuj77")
+
+[node name="FlechaObjetivo" type="Sprite2D" parent="."]
+position = Vector2(2, -109)
+texture = ExtResource("12_wagb4")
 
 [connection signal="body_entered" from="Dialogar" to="." method="_on_dialogar_body_entered"]
 [connection signal="body_exited" from="Dialogar" to="." method="_on_dialogar_body_exited"]

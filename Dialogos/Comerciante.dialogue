@@ -21,7 +21,8 @@ Comerciante: Si te vuelves conocido, podrías conseguir mejores ofertas...
 	Comerciante : Tienes [color=gray]{{PlayerStats.inventario["Lata"]}} Latas[/color].
 	Comerciante : Deseas Intercambiarlo por [color=yellow]{{PlayerStats.inventario["Lata"]*1}} MichiMonedas[/color]?
 	- Si 
-		set PlayerStats.MichiMonedas += PlayerStats.inventario["Lata"]*1
+		set PlayerStats.Monedas += PlayerStats.inventario["Lata"]*1
+		set PlayerStats.inventario["Lata"] -= PlayerStats.inventario["Lata"]
 	- No 
 	Comerciante: ...
 	=> Saludo_No
@@ -29,21 +30,24 @@ Comerciante: Si te vuelves conocido, podrías conseguir mejores ofertas...
 	Comerciante : Tienes [color=cornsilk]{{PlayerStats.inventario["Hueso"]}} Huesos[/color].
 	Comerciante : Deseas Intercambiarlo por [color=yellow]{{PlayerStats.inventario["Hueso"]*2}} MichiMonedas[/color]?
 	- Si 
-		set PlayerStats.MichiMonedas += PlayerStats.inventario["Hueso"]*2
+		set PlayerStats.Monedas += PlayerStats.inventario["Hueso"]*2
+		set PlayerStats.inventario["Hueso"]-=PlayerStats.inventario["Hueso"]
 	- No => Saludo_No
 	Comerciante: ...
 - Trapo
 	Comerciante : Tienes [color=red]{{PlayerStats.inventario["Trapo"]}} Trapos[/color].
 	Comerciante : Deseas Intercambiarlo por [color=yellow]{{PlayerStats.inventario["Trapo"]*3}} MichiMonedas[/color]?
 	- Si 
-		set PlayerStats.MichiMonedas += PlayerStats.inventario["Trapo"]*3
+		set PlayerStats.Monedas += PlayerStats.inventario["Trapo"]*3
+		set PlayerStats.inventario["Trapo"]-=PlayerStats.inventario["Trapo"]
 	- No => Saludo_No
 	Comerciante: ...
 - Botella
 	Comerciante : Tienes [color=cadet_blue]{{PlayerStats.inventario["Botella"]}} Botellas[/color].
 	Comerciante : Deseas Intercambiarlo por [color=yellow]{{PlayerStats.inventario["Botella"]*4}} MichiMonedas[/color]?
 	- Si 
-		set PlayerStats.MichiMonedas += PlayerStats.inventario["Botella"]*4
+		set PlayerStats.Monedas += PlayerStats.inventario["Botella"]*4
+		set PlayerStats.inventario["Botella"] -= PlayerStats.inventario["Botella"]
 	- No => Saludo_No
 	Comerciante: ...
 => Saludo_Comerciante

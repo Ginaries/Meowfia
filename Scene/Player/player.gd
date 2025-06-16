@@ -8,8 +8,12 @@ var Basurero_cerca
 var Hablando:bool=false
 var Basurero:bool=false
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var flecha_objetivo: Sprite2D = $FlechaObjetivo
+@onready var ListaDeNPC:Dictionary[String,Node2D]={"Gatita Misteriosa":$"../Gatita Misteriosa","Comerciante":$"../Mercader"}
+@export var NPCObj:Node2D
 
 func _ready() -> void:
+	flecha_objetivo.visible=false
 	DialogueManager.connect("dialogue_ended", Callable(self, "_on_dialogo_terminado"))
 	global_position = PlayerStats.ultima_posicion
 
@@ -19,10 +23,28 @@ func _on_dialogo_terminado(_resource):
 
 
 func _physics_process(_delta: float) -> void:
+	
 	if Hablando:
 		$AnimatedSprite2D.play("Idle")  # o detener animación si querés
 		return
+		# Si hay un objetivo válido definido
+	if NpcDialogo.Objetivo and ListaDeNPC.has(NpcDialogo.CualObj):
+		NPCObj = ListaDeNPC[NpcDialogo.CualObj]
 
+		if NPCObj and is_instance_valid(NPCObj):
+			flecha_objetivo.visible = true
+
+			var direccion = NPCObj.global_position - global_position
+			flecha_objetivo.rotation = direccion.angle() - deg_to_rad(270)
+
+			# Opcional: Si está cerca del NPC, ocultar la flecha
+			if global_position.distance_to(NPCObj.global_position) < 50:
+				flecha_objetivo.visible = false
+		else:
+			flecha_objetivo.visible = false
+	else:
+		flecha_objetivo.visible = false
+		
 	var input_vector := Vector2(
 		Input.get_axis("izq", "der"),
 		Input.get_axis("arriba", "abajo")
