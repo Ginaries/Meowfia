@@ -67,13 +67,15 @@ func recibir_daño(cantidad: int):
 func atacar_enemigo():
 	EnemigosStats.SaludActual -= Ataque
 
-func derrotar_enemigo(exp:int=EnemigosStats.ExpOfrecida):
-	ganar_experiencia(exp)
+func derrotar_enemigo(xp:int=EnemigosStats.ExpOfrecida):
+	ganar_experiencia(xp)
 	obtener_objeto_de_combate()
 	Monedas += randi_range(1, 3)
 #--------------------SALUDRECARGA------------------------
 func Curar(cuanto:int) -> void:
 	var Cuantocurar=cuanto
+	if Cuantocurar+Alimentacion>Hambre:
+		Cuantocurar= Hambre-Alimentacion
 	while Cuantocurar>0:
 		Alimentacion += 1
 		Cuantocurar-=1

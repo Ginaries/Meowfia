@@ -57,6 +57,9 @@ var portraits: Dictionary = {
 	str(PlayerStats.Nombre): preload("res://Assets/Portrail/prota.png"),
 	str(PlayerStats.Nombre)+"(Feliz)": preload("res://Assets/Portrail/prota_felis.png"),
 	str(PlayerStats.Nombre)+"(OMG)": preload("res://Assets/Portrail/prota_omg.png"),
+	"Gatita Misteriosa":preload("res://Assets/Portrail/michi_tutorial.png"),
+	"Mercader": preload("res://Assets/Portrail/mercader.png"),
+	"Jefe": preload("res://Assets/Portrail/mercader.png"),
 	# Agregá más acá según los nombres que uses en dialogue_line.character
 }
 

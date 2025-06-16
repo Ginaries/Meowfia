@@ -1,13 +1,12 @@
 extends Node2D
 @onready var timer: Timer = $Spawn/Timer
-@onready var escena_de_batalla: Node2D = $"Escena de batalla"
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("escape"):
 		get_tree().quit()
 	#agregar muerte del player salir del juego al menu
 
-func _on_spawn_body_entered(body: Node2D) -> void:
+func _on_spawn_body_entered(_body: Node2D) -> void:
 	timer.start(5.0)
 
 func _on_timer_timeout() -> void:

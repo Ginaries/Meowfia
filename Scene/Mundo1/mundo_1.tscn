@@ -1,11 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://b20bpdxynqru"]
+[gd_scene load_steps=15 format=3 uid="uid://b20bpdxynqru"]
 
 [ext_resource type="Script" uid="uid://dh26hma0f3d13" path="res://Scene/Mundo1/mundo_1.gd" id="1_pijtp"]
 [ext_resource type="PackedScene" uid="uid://bglkuw3ume551" path="res://Scene/Player/player.tscn" id="1_r1u74"]
 [ext_resource type="PackedScene" uid="uid://d26xu4bujhhr1" path="res://Scene/NPC/npc.tscn" id="2_bxldh"]
 [ext_resource type="Script" uid="uid://c4mbfa5kr1sj1" path="res://Scene/Edificio/edificio_1.gd" id="2_p0im4"]
 [ext_resource type="Script" uid="uid://6epnl845p8a0" path="res://Scene/Hud/canvas_layer.gd" id="4_ydd2s"]
-[ext_resource type="Texture2D" uid="uid://bavjwyvt5r6r0" path="res://Assets/Hub/moneda.png" id="5_hgbl3"]
+[ext_resource type="Texture2D" uid="uid://xuxgemn5nuyv" path="res://Assets/Hub/moneda.png" id="5_hgbl3"]
 [ext_resource type="PackedScene" uid="uid://niqw8radsakf" path="res://Scene/TachoDeBasura/tacho_de_basura.tscn" id="6_hgbl3"]
 [ext_resource type="Texture2D" uid="uid://c07wuokvvadbu" path="res://Assets/Edificio/edificiomuchasventanas.png" id="7_srwvq"]
 
@@ -14,6 +14,43 @@ size = Vector2(326, 139)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nr0ch"]
 size = Vector2(473, 600)
+
+[sub_resource type="Animation" id="Animation_p0im4"]
+resource_name = "Mostrar"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.03333, 4.01, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-237, 125), Vector2(31, 125), Vector2(31, 125), Vector2(-237, 125)]
+}
+
+[sub_resource type="Animation" id="Animation_nr0ch"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-237, 125)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rx4lw"]
+_data = {
+&"Mostrar": SubResource("Animation_p0im4"),
+&"RESET": SubResource("Animation_nr0ch")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p0im4"]
 radius = 834.101
@@ -90,6 +127,86 @@ offset_left = 37.0
 offset_top = 25.0
 offset_right = 294.0
 offset_bottom = 52.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = -237.0
+offset_top = 125.0
+offset_right = -12.0
+offset_bottom = 364.0
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Inventario"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+
+[node name="Lata" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+
+[node name="Hueso" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
+
+[node name="Trapo" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/VBoxContainer/HBoxContainer4"]
+
+[node name="Botella" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/VBoxContainer/HBoxContainer5"]
+
+[node name="Garra" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/VBoxContainer/HBoxContainer6"]
+
+[node name="Colmillo" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/VBoxContainer/HBoxContainer7"]
+
+[node name="Escama" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/VBoxContainer/HBoxContainer8"]
+
+[node name="Cristal Oscuro" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_rx4lw")
+}
 
 [node name="TachoDeBasura" parent="." instance=ExtResource("6_hgbl3")]
 position = Vector2(975, 184)

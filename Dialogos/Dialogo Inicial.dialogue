@@ -9,14 +9,14 @@ Gatita Misteriosa: Te encuentras en el mundo de "Meowfia". => END
 ~ Tutorial_Barra_de_Hambre
 Gatita Misteriosa: Se nota que tienes hambre. ¿Por qué no tomas este [shake rate=20 level=10]pescado[/shake]?
 - Tomar pescado
-	{{PlayerStats.Nombre}}: Gracias...
+	{{PlayerStats.Nombre}}(Feliz): Gracias...
 	do PlayerStats.Curar(100)
 	Gatita Misteriosa: Te ayudarán a mantenerte vivo. Llenarán tu barra de hambre. => END
 
 #Se puede hacer que le den un pescado para que se le llene la barra de hambre? SI
 #Están desfazados los botones de opciones . ok 
 - No tomar
-	{{PlayerStats.Nombre}}: No confío en tí...
+	{{PlayerStats.Nombre}}(OMG): No confío en tí...
 	Gatita Misteriosa: Te recomiendo que lo tomes.
 	Gatita Misteriosa: Si tu hambre baja podrías [shake rate=20 level=10]morir[/shake]. => Tutorial_Barra_de_Hambre
 
@@ -27,7 +27,7 @@ Gatita Misteriosa: Ven, sígueme. Te enseñaré lo necesario para moverte por es
 {{PlayerStats.Nombre}}: Esta bien, te sigo.
 Gatita Misteriosa: ...
 Gatita Misteriosa: Podrás moverte por el entorno con las teclas [W], [A], [S] y [D].
-Gatita Misteriosa: ¿Por qué no lo intentas?=> END
+Gatita Misteriosa: ¿Por qué no lo intentas? => END
 #Mismo criterio que con el WASD
 
 ~ Fin_Movimiento
