@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Meowfia"
+run/main_scene="uid://dnbm5sv3pdbgs"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

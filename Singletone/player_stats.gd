@@ -14,7 +14,7 @@ var inventario: Dictionary = {
 	"Lata": 0, "Hueso": 0, "Trapo": 0, "Botella": 0,
 	"Garra": 0, "Colmillo": 0, "Escama": 0, "Cristal oscuro": 0
 }
-
+var obj:String
 var posibles_objetos = ["Lata", "Hueso", "Trapo", "Botella"]  # Solo para recolección
 var objetos_de_combate = ["Garra", "Colmillo", "Escama", "Cristal oscuro"]
 
@@ -27,7 +27,8 @@ func agregar_a_inventario(nombre_objeto: String):
 		inventario[nombre_objeto] = 1
 
 func revolver_basura():
-	var obj = posibles_objetos.pick_random()
+	obj = posibles_objetos.pick_random()
+	print(obj)
 	agregar_a_inventario(obj)
 
 func tiene_objeto_pedido() -> bool:
@@ -39,7 +40,7 @@ func entregar_objeto():
 		Monedas += 1
 
 func obtener_objeto_de_combate():
-	var obj = objetos_de_combate.pick_random()
+	obj = objetos_de_combate.pick_random()
 	agregar_a_inventario(obj)
 
 #----------------------------------------------------------------------

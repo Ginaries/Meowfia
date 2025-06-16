@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://iirokylldssq"]
+[gd_scene load_steps=7 format=3 uid="uid://iirokylldssq"]
 
 [ext_resource type="Script" uid="uid://bbvqsncwfwtj8" path="res://Scene/EscenaDeBatalla/escena_de_batalla.gd" id="1_ylj5n"]
 [ext_resource type="Texture2D" uid="uid://dgus3pvuhq0lr" path="res://Assets/Sprites/enemigo_1.png" id="2_ylj5n"]
+[ext_resource type="PackedScene" uid="uid://b0xm37xstqcsf" path="res://Scene/HUB/HUD.tscn" id="3_pek28"]
 
 [sub_resource type="Animation" id="Animation_pek28"]
 length = 0.001
@@ -83,6 +84,8 @@ autowrap_mode = 1
 libraries = {
 &"": SubResource("AnimationLibrary_ob7rm")
 }
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_pek28")]
 
 [connection signal="pressed" from="Atacar" to="." method="_on_atacar_pressed"]
 [connection signal="timeout" from="Recibe ataque" to="." method="_on_recibe_ataque_timeout"]

@@ -1,10 +1,70 @@
-[gd_scene load_steps=4 format=3 uid="uid://niqw8radsakf"]
+[gd_scene load_steps=7 format=3 uid="uid://niqw8radsakf"]
 
 [ext_resource type="Script" uid="uid://cxe6pkg1svbmn" path="res://Scene/TachoDeBasura/tacho_de_basura.gd" id="1_5icyk"]
 [ext_resource type="Texture2D" uid="uid://ka31stl2ji3x" path="res://icon.svg" id="2_1j5xd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1j5xd"]
 radius = 66.0681
+
+[sub_resource type="Animation" id="Animation_1j5xd"]
+resource_name = "subir"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Obtencion:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.92, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Obtencion:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.03, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-26, 66), Vector2(-25, -88.515)]
+}
+
+[sub_resource type="Animation" id="Animation_iq4tp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Obtencion:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Obtencion:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-26, 66)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1vpda"]
+_data = {
+&"RESET": SubResource("Animation_iq4tp"),
+&"subir": SubResource("Animation_1j5xd")
+}
 
 [node name="TachoDeBasura" type="Area2D" groups=["basura"]]
 collision_layer = 4
@@ -20,5 +80,19 @@ texture = ExtResource("2_1j5xd")
 
 [node name="Recargado" type="Timer" parent="."]
 wait_time = 30.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1vpda")
+}
+
+[node name="Obtencion" type="Label" parent="."]
+visible = false
+offset_left = -25.0825
+offset_top = -75.7715
+offset_right = 22.9175
+offset_bottom = -52.7715
+theme_override_colors/font_color = Color(0.142417, 0.37057, 0.971258, 1)
+text = "cosaw"
 
 [connection signal="timeout" from="Recargado" to="." method="_on_recargado_timeout"]
