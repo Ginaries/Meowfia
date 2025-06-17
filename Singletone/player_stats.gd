@@ -82,3 +82,13 @@ func Curar(cuanto:int) -> void:
 		Cuantocurar-=1
 		print("Debug: Alimentacion =", Alimentacion)
 		await get_tree().create_timer(0.05).timeout
+func reiniciarStats():
+	ultima_posicion= Vector2.ZERO
+	Nombre="Pepito"
+	Nivel=1
+	Hambre=100
+	Monedas= 0
+	Alimentacion=50
+	Ataque=2
+	Experiencia=0
+	SiguienteNivelEn=100

@@ -24,6 +24,8 @@ func _process(delta: float) -> void:
 		return
 	else:
 		Actualizar()
+	if PlayerStats.Alimentacion==0:
+		get_tree().change_scene_to_file("res://Scene/Menu/menu.tscn")
 	
 func Actualizar():
 	EnemigoActivo=true

@@ -28,7 +28,7 @@ size = Vector2(326, 139)
 size = Vector2(455.45, 633.896)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p0im4"]
-radius = 834.101
+radius = 1039.01
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dp4h4"]
 size = Vector2(1010, 66)
@@ -103,7 +103,7 @@ position = Vector2(560, 7)
 scale = Vector2(0.260274, 0.218182)
 
 [node name="Mercader" parent="." instance=ExtResource("9_rx4lw")]
-position = Vector2(1015, -101)
+position = Vector2(1630, -865)
 scale = Vector2(0.277427, 0.249605)
 
 [node name="Chef" parent="." instance=ExtResource("8_kenic")]
@@ -115,28 +115,36 @@ position = Vector2(839, 20)
 scale = Vector2(0.497455, 0.490187)
 
 [node name="TachoDeBasura2" parent="." instance=ExtResource("6_hgbl3")]
-position = Vector2(1153, 22)
+position = Vector2(1290, 113)
 scale = Vector2(0.497455, 0.490187)
 
 [node name="TachoDeBasura3" parent="." instance=ExtResource("6_hgbl3")]
-position = Vector2(914, -95)
+position = Vector2(-131, -1460)
 scale = Vector2(0.497455, 0.490187)
 
 [node name="TachoDeBasura4" parent="." instance=ExtResource("6_hgbl3")]
-position = Vector2(1504, -30)
+position = Vector2(1664, -1094)
+scale = Vector2(0.497455, 0.490187)
+
+[node name="TachoDeBasura6" parent="." instance=ExtResource("6_hgbl3")]
+position = Vector2(1605, -1788)
+scale = Vector2(0.497455, 0.490187)
+
+[node name="TachoDeBasura7" parent="." instance=ExtResource("6_hgbl3")]
+position = Vector2(832, -1940)
 scale = Vector2(0.497455, 0.490187)
 
 [node name="Spawn" type="Area2D" parent="."]
 position = Vector2(1103, -1953.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn"]
-position = Vector2(3056, 88.5)
+position = Vector2(7, 81.5)
 shape = SubResource("CircleShape2D_p0im4")
 
 [node name="Timer" type="Timer" parent="Spawn"]
 
 [node name="TachoDeBasura5" parent="." instance=ExtResource("6_hgbl3")]
-position = Vector2(655, 153)
+position = Vector2(771, -939)
 scale = Vector2(0.483551, 0.449281)
 
 [node name="PARED" type="StaticBody2D" parent="."]
@@ -560,7 +568,6 @@ scale = Vector2(0.714, 0.538)
 script = ExtResource("2_p0im4")
 
 [node name="Ramparecta" type="Sprite2D" parent="StaticBody2D4"]
-scale = Vector2(1, 1)
 texture = ExtResource("15_kenic")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4"]
@@ -614,7 +621,6 @@ scale = Vector2(1.366, 1)
 script = ExtResource("2_p0im4")
 
 [node name="Cañosskate" type="Sprite2D" parent="StaticBody2D7"]
-scale = Vector2(1, 1)
 texture = ExtResource("18_gevue")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D7"]
@@ -640,7 +646,6 @@ polygon = PackedVector2Array(-203.148, 66.5, -219.985, 66.5, -214.861, 39.5, -20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7/Area2D"]
 position = Vector2(8.4187, 3.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_gevue")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
