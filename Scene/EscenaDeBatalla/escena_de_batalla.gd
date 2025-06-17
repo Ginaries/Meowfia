@@ -16,6 +16,9 @@ func _ready() -> void:
 	terminoeldialogo=true
 
 func _process(delta: float) -> void:
+	if PlayerStats.Alimentacion==0:
+		PlayerStats.reiniciarStats()
+		get_tree().change_scene_to_file("res://Scene/Menu/menu.tscn")
 	if !terminoeldialogo:
 		return
 	if EnemigoActivo==true:
@@ -24,8 +27,7 @@ func _process(delta: float) -> void:
 		return
 	else:
 		Actualizar()
-	if PlayerStats.Alimentacion==0:
-		get_tree().change_scene_to_file("res://Scene/Menu/menu.tscn")
+	
 	
 func Actualizar():
 	EnemigoActivo=true
@@ -53,3 +55,9 @@ func _on_recibe_ataque_timeout() -> void:
 	animation_player.play("atacar")
 	EnemigosStats.Atacar()
 	recibe_ataque.start(EnemigosStats.time_atack)
+
+
+func _on_button_pressed() -> void:
+	legendario.stop()
+	recibe_ataque.stop()
+	get_tree().change_scene_to_file("res://Scene/Mundo1/mundo_1.tscn")

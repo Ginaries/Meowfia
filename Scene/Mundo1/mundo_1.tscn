@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b20bpdxynqru"]
+[gd_scene load_steps=33 format=3 uid="uid://b20bpdxynqru"]
 
 [ext_resource type="Script" uid="uid://dh26hma0f3d13" path="res://Scene/Mundo1/mundo_1.gd" id="1_pijtp"]
 [ext_resource type="PackedScene" uid="uid://bglkuw3ume551" path="res://Scene/Player/player.tscn" id="1_r1u74"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c07wuokvvadbu" path="res://Assets/Edificio/edificiomuchasventanas.png" id="7_srwvq"]
 [ext_resource type="PackedScene" uid="uid://dttqsaerma7ca" path="res://Scene/NPC/Chef.tscn" id="8_kenic"]
 [ext_resource type="PackedScene" uid="uid://ndfgx68gr41i" path="res://Scene/NPC/Mercader.tscn" id="9_rx4lw"]
+[ext_resource type="Script" uid="uid://b37e7j3dtum74" path="res://Scene/Mundo1/spawn.gd" id="10_ro66f"]
 [ext_resource type="Texture2D" uid="uid://6xujhhchcpgd" path="res://Assets/ENVIROMENT/arbol.png" id="11_8ju5o"]
 [ext_resource type="Texture2D" uid="uid://c62cr20olgxpd" path="res://Assets/ENVIROMENT/murolargo.png" id="11_n0544"]
 [ext_resource type="Texture2D" uid="uid://cbiafilry72cq" path="res://Assets/ENVIROMENT/mediaesfera.png" id="12_uqgr6"]
@@ -27,8 +28,8 @@ size = Vector2(326, 139)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nr0ch"]
 size = Vector2(455.45, 633.896)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_p0im4"]
-radius = 1039.01
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6n70g"]
+size = Vector2(2914, 1395)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dp4h4"]
 size = Vector2(1010, 66)
@@ -135,11 +136,12 @@ position = Vector2(832, -1940)
 scale = Vector2(0.497455, 0.490187)
 
 [node name="Spawn" type="Area2D" parent="."]
-position = Vector2(1103, -1953.5)
+position = Vector2(803, -1842)
+script = ExtResource("10_ro66f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn"]
-position = Vector2(7, 81.5)
-shape = SubResource("CircleShape2D_p0im4")
+position = Vector2(293, 76.5)
+shape = SubResource("RectangleShape2D_6n70g")
 
 [node name="Timer" type="Timer" parent="Spawn"]
 
@@ -558,7 +560,7 @@ polygon = PackedVector2Array(-131, 218, 265, 223, 162, 153, 224, -108, 107, -102
 polygon = PackedVector2Array(-134, 214, -183, 214, -198, 37, -73, -237, 170, -226, 183, -179, 257, -115, 254, -115, 241, -104, 224, -111, 66, -101, -9, -98)
 
 [node name="Rampaescenariopelea" type="Sprite2D" parent="."]
-position = Vector2(1086.5, -1716.5)
+position = Vector2(1112, -1742)
 scale = Vector2(1.958, 1.188)
 texture = ExtResource("14_i7mej")
 
@@ -685,9 +687,9 @@ drag_bottom_margin = 0.15
 [connection signal="body_exited" from="Edificio 1/Area2D" to="Edificio 1" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Edificio 2/Area2D" to="Edificio 2" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Edificio 2/Area2D" to="Edificio 2" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Spawn" to="." method="_on_spawn_body_entered"]
-[connection signal="body_exited" from="Spawn" to="." method="_on_spawn_body_exited"]
-[connection signal="timeout" from="Spawn/Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spawn" to="Spawn" method="_on_spawn_body_entered"]
+[connection signal="body_exited" from="Spawn" to="Spawn" method="_on_spawn_body_exited"]
+[connection signal="timeout" from="Spawn/Timer" to="Spawn" method="_on_timer_timeout"]
 [connection signal="body_entered" from="PARED/Area2D" to="Edificio 2" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="PARED/Area2D" to="Edificio 2" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="PARED2/Area2D" to="Edificio 2" method="_on_area_2d_body_entered"]
