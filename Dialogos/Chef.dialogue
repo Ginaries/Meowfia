@@ -7,7 +7,7 @@ Gatita Chef: ¿Por qué no le échas un vistazo?
 	Gatita Chef: ¿Qué te gustaría comprar?
 	- Michigalletas X 3 MichiMonedas
 		do PlayerStats.Curar(5) 
-		set PlayerStats.MichiMonedas -= 5
+		set PlayerStats.Monedas -= 5
 		=> Saludo_Chef
 	- Pescaditos Deliciosos X 10 MichiMonedas
 		set PlayerStats.MichiMonedas -= 10
@@ -31,7 +31,7 @@ Gatita Chef: Ya sabes dónde encontrarme.
 
 ~ Negacion_Plata
 Gatita Chef: Uhm...
-Gatita Chef: Parece queno tienes suficiente.
+Gatita Chef: Parece que no tienes suficiente.
 {{PlayerStats.Nombre}}: Oh...
 {{PlayerStats.Nombre}}: Volvere luego.
 => Saludo_No

@@ -19,7 +19,7 @@ Gatita Misteriosa: Se nota que tienes hambre. ¿Por qué no tomas este [shake ra
 	Gatita Misteriosa: Si tu hambre baja podrías [shake rate=20 level=10]morir[/shake]. => Tutorial_Barra_de_Hambre
 ~ Fin_Movimiento
 Gatita Misteriosa: Bien.
-Gatita Misteriosa: El momento de desaparecer ha llegado. Suerte!
+Gatita Misteriosa: Ya puedes irte tranquilo.
 Gatita Misteriosa: Ah... casi lo olvido. 
 {{PlayerStats.Nombre}}: ¿Qué cosa?
 Gatita Misteriosa: ¿Ves esos contenedores de ahi?
@@ -34,7 +34,6 @@ Gatita Misteriosa: Eso es! al interactuar con los tachos de basura, conseguiras 
 Gatita Misteriosa: Para ver tu inventario presiona [I]. Cuando tengas suficientes, ve a visitar a el [shake rate=20 level=10]Comerciante[/shake] el te dara una mano a sobrevivir
 Gatita Misteriosa: Ahora ya sabes como manejarte por aquí.
 Gatita Misteriosa: Hasta pronto, nos vemos luego... O no.
-Gatita Misteriosa: *Desaparece*
-{{PlayerStats.Nombre}}: Estoy a mi suerte ahora...
+{{PlayerStats.Nombre}}: MMM Deberia ir a ver a ese Comerciante.
 => END
 # Para crear personajes se pone el nombre, ej Gatita Misteriosa:

@@ -5,6 +5,7 @@ extends Control
 @onready var salir: Button = $VBoxContainer/Salir
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var cartel_nombre: Control = $Ingresa
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 func _ready():
@@ -27,6 +28,8 @@ func _ready():
 
 func _on_aceptar_pressed() -> void:
 	if ingrese_nombre.text != null:
+		audio_stream_player_2d.play()
+		await audio_stream_player_2d.finished
 		PlayerStats.Nombre=ingrese_nombre.text
 		print(PlayerStats.Nombre)
 		get_tree().change_scene_to_file("res://Scene/Mundo1/mundo_1.tscn")
@@ -36,10 +39,13 @@ func _on_aceptar_pressed() -> void:
 
 
 func _on_start_pressed() -> void:
+	audio_stream_player_2d.play()
 	cartel_nombre.visible=true
 	start.disabled=true
 	salir.disabled=true
 
 
 func _on_salir_pressed() -> void:
+	audio_stream_player_2d.play()
+	await audio_stream_player_2d.finished
 	get_tree().quit()

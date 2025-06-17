@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://br7gwfjo76hn1"
+path="res://.godot/imported/Interacción con el chef.mp3-85eb1fd8c1342356bd3c786e5623dc42.mp3str"
+
+[deps]
+
+source_file="res://Assets/sonidos/Interacción con el chef.mp3"
+dest_files=["res://.godot/imported/Interacción con el chef.mp3-85eb1fd8c1342356bd3c786e5623dc42.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

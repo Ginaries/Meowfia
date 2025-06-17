@@ -1,11 +1,12 @@
 extends StaticBody2D
 
 
+
+		
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		body.z_index=-1
-
+		body.entrar_al_fondo()
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		body.z_index=0
+		body.salir_del_fondo()

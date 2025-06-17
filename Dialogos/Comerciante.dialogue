@@ -8,9 +8,11 @@ Comerciante: Si es lo que te interesa.
 Comerciante: Te serán útiles por aquí.
 Comerciante: Podrás comprar "favores" y hacerte mas conocido. 
 Comerciante: Si te vuelves conocido, podrías conseguir mejores ofertas...
-{{PlayerStats.Nombre}}: ...
-=> Iniciar_Tradeo
-
+{{PlayerStats.Nombre}}: ... y que debo hacer?
+Comerciante: Urgando la basura, me la traes y yo te dare riquesas
+Comerciante: Las gente como yo, preferimos objetos a una bulgar moneda, pero a ti, a ti te podra salvar la vida
+Comerciante: Ademas alguien elegante como yo, no podria ensuciarme las manos en una tacho como ese.
+Comerciante: Ahora vayamos a lo que realmente importa
 ~ Iniciar_Tradeo
 %25 Comerciante: Veamos que tienes.
 %25 Comerciante: ¿Qué puedo ofrecerte?
@@ -23,6 +25,7 @@ Comerciante: Si te vuelves conocido, podrías conseguir mejores ofertas...
 	- Si 
 		set PlayerStats.Monedas += PlayerStats.inventario["Lata"]*1
 		set PlayerStats.inventario["Lata"] -= PlayerStats.inventario["Lata"]
+		=> Saludo_Comerciante
 	- No 
 	Comerciante: ...
 	=> Saludo_No
@@ -32,6 +35,7 @@ Comerciante: Si te vuelves conocido, podrías conseguir mejores ofertas...
 	- Si 
 		set PlayerStats.Monedas += PlayerStats.inventario["Hueso"]*2
 		set PlayerStats.inventario["Hueso"]-=PlayerStats.inventario["Hueso"]
+		=> Saludo_Comerciante
 	- No => Saludo_No
 	Comerciante: ...
 - Trapo
@@ -40,6 +44,7 @@ Comerciante: Si te vuelves conocido, podrías conseguir mejores ofertas...
 	- Si 
 		set PlayerStats.Monedas += PlayerStats.inventario["Trapo"]*3
 		set PlayerStats.inventario["Trapo"]-=PlayerStats.inventario["Trapo"]
+		=> Saludo_Comerciante
 	- No => Saludo_No
 	Comerciante: ...
 - Botella
@@ -48,9 +53,10 @@ Comerciante: Si te vuelves conocido, podrías conseguir mejores ofertas...
 	- Si 
 		set PlayerStats.Monedas += PlayerStats.inventario["Botella"]*4
 		set PlayerStats.inventario["Botella"] -= PlayerStats.inventario["Botella"]
+		=> Saludo_Comerciante
 	- No => Saludo_No
 	Comerciante: ...
-=> Saludo_Comerciante
+
 
 ~ Saludo_No
 %50 Comerciante: No me hagas perder el tiempo.

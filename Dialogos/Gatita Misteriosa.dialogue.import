@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c7ysl6qwysbnd"
+path="res://.godot/imported/Gatita Misteriosa.dialogue-4f88d98833ec4f4bb980ae75423cdfa2.tres"
+
+[deps]
+
+source_file="res://Dialogos/Gatita Misteriosa.dialogue"
+dest_files=["res://.godot/imported/Gatita Misteriosa.dialogue-4f88d98833ec4f4bb980ae75423cdfa2.tres"]
+
+[params]
+
+defaults=true

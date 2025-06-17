@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cp5taldaasuxv"
+path="res://.godot/imported/Interacción con el Basurero 2.mp3-a822eb3ee5e86e863d6fa387bdef2cf5.mp3str"
+
+[deps]
+
+source_file="res://Assets/sonidos/Interacción con el Basurero 2.mp3"
+dest_files=["res://.godot/imported/Interacción con el Basurero 2.mp3-a822eb3ee5e86e863d6fa387bdef2cf5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://dttqsaerma7ca"]
+
+[ext_resource type="Script" uid="uid://bludptvmp36kq" path="res://Scene/NPC/chef.gd" id="1_nytvn"]
+[ext_resource type="Texture2D" uid="uid://508m3ckhikf4" path="res://Assets/Sprites/michi_chef.png" id="2_2f00a"]
+[ext_resource type="Texture2D" uid="uid://m17tl3wpovoo" path="res://Assets/Sprites/michi_chef2.png" id="3_q2hij"]
+[ext_resource type="AudioStream" uid="uid://br7gwfjo76hn1" path="res://Assets/sonidos/Interacción con el chef.mp3" id="4_nytvn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cnkqp"]
+radius = 64.6297
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03uqs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2f00a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_q2hij")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2smci"]
+radius = 125.256
+
+[node name="Chef" type="CharacterBody2D" groups=["npc"]]
+script = ExtResource("1_nytvn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cnkqp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.55, 0.458)
+sprite_frames = SubResource("SpriteFrames_03uqs")
+animation = &"idle"
+frame = 1
+frame_progress = 0.143734
+
+[node name="Label" type="Label" parent="AnimatedSprite2D"]
+offset_left = -113.0
+offset_top = -299.0
+offset_right = 112.0
+offset_bottom = -252.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DetectarPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectarPlayer"]
+shape = SubResource("CircleShape2D_2smci")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_nytvn")
+
+[connection signal="body_entered" from="DetectarPlayer" to="." method="_on_detectar_player_body_entered"]
+[connection signal="body_exited" from="DetectarPlayer" to="." method="_on_detectar_player_body_exited"]

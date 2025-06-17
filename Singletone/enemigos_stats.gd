@@ -2,10 +2,67 @@ extends Node
 
 var Nombre:String
 var IconSelect:Texture
-var Icons:Array[Texture]=[preload("res://Assets/Sprites/enemigo_1.png")]
+var Icons:Array[Texture]=[preload("res://Assets/Sprites/enemigo_1.png"),
+preload("res://Assets/Sprites/Captura de pantalla 2025-06-17 003157.png"),
+preload("res://Assets/Sprites/enemigo_2.png"),
+preload("res://Assets/Sprites/enemigo_3.png"),
+]
 var TiposRareza:Array[String]=["Comun","Poco Comun","Raro","Mitico","Legendario"]
 var Rareza:String
-var PosibilidadNombre:Array[String]=["Fabi","Santi","Laura"]
+var PosibilidadNombre:Array[String] = [
+	"Mico",
+	"Bigotes",
+	"Rasguño",
+	"Tito Uña",
+	"Don Pelusa",
+	"Patitas",
+	"Garras",
+	"Michito",
+	"Ñato",
+	"Colmillo",
+	"Rufián",
+	"Sombra",
+	"Zarpas",
+	"Lito",
+	"Panza",
+	"El Orejas",
+	"Tacho",
+	"Fideo",
+	"Carlitos Uña",
+	"Cachete",
+	"Pepe Zarpa",
+	"Chispa",
+	"Manteca",
+	"Trapo",
+	"El Maullido",
+	"Guantes",
+	"Pelaje",
+	"Trosko",
+	"Cebolla",
+	"Cucho",
+	"Rolo",
+	"Torcido",
+	"Furia",
+	"Chirimbolo",
+	"Don Gato",
+	"Ñeko",
+	"Lomo",
+	"Peluche",
+	"Tormenta",
+	"Ronroneo",
+	"El Rengo",
+	"Clawdius",
+	"Tigre",
+	"Grisín",
+	"Ñaño",
+	"Don Zarpa",
+	"Felino",
+	"Tartán",
+	"Barbijo",
+	"Zucho",
+	"Tripas"
+]
+
 var SaludMax:int
 var SaludActual:int
 var ExpOfrecida:int
@@ -19,13 +76,13 @@ func ElegimosEnemigo():
 	if Rareza=="Comun":
 		IconSelect=Icons[0]
 	if Rareza=="Poco Comun":
-		IconSelect=Icons[0]
+		IconSelect=Icons[2]
 	if Rareza=="Raro":
-		IconSelect=Icons[0]
+		IconSelect=Icons[3]
 	if Rareza=="Mitico":
 		IconSelect=Icons[0]
 	if Rareza=="Legendario":
-		IconSelect=Icons[0]
+		IconSelect=Icons[1]
 	
 	var multiplicador_rareza = {
 		"Comun": 1.0,

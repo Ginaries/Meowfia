@@ -9,7 +9,10 @@ var Hablando:bool=false
 var Basurero:bool=false
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var flecha_objetivo: Sprite2D = $FlechaObjetivo
-@onready var ListaDeNPC:Dictionary[String,Node2D]={"Gatita Misteriosa":$"../Gatita Misteriosa","Comerciante":$"../Mercader"}
+@onready var ListaDeNPC:Dictionary[String,Node2D]={"Gatita Misteriosa":$"../Gatita Misteriosa",
+"Comerciante":$"../Mercader",
+"Tacho":$"../TachoDeBasura",
+"Chef":$"../Chef"}
 @export var NPCObj:Node2D
 
 func _ready() -> void:
@@ -72,11 +75,14 @@ func _physics_process(_delta: float) -> void:
 	
 func _input(event):
 	if event.is_action_pressed("Interactuar") and npc_cercano != null and !Hablando:
-		npc_cercano.Hablar()
 		Hablando = true
-	if event.is_action_pressed("Interactuar") and Basurero and Basurero_cerca!=null:
+		npc_cercano.Hablar()
+	if event.is_action_pressed("Interactuar") and Basurero and Basurero_cerca!=null and !Hablando:
 		print(Basurero_cerca)
 		Basurero_cerca.Buscar()
+		if NpcDialogo.CualObj=="Tacho":
+			Hablando = true
+			Basurero_cerca.Hablar()
 
 
 func Interactuar() -> bool:
@@ -99,3 +105,15 @@ func _on_detector_basura_area_entered(area: Area2D) -> void:
 	print("encontre basura")
 	Basurero=true
 	Basurero_cerca=area
+
+var fondo_counter := 0
+
+func entrar_al_fondo():
+	fondo_counter += 1
+	z_index = -1
+
+func salir_del_fondo():
+	fondo_counter -= 1
+	if fondo_counter <= 0:
+		fondo_counter = 0
+		z_index = 0

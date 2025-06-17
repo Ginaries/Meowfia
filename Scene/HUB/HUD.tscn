@@ -1,7 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0xm37xstqcsf"]
+[gd_scene load_steps=14 format=3 uid="uid://b0xm37xstqcsf"]
 
 [ext_resource type="Script" uid="uid://6epnl845p8a0" path="res://Scene/Hud/canvas_layer.gd" id="1_eb1vj"]
-[ext_resource type="Texture2D" uid="uid://xuxgemn5nuyv" path="res://Assets/Hub/Moneda.png" id="2_rqqsa"]
+[ext_resource type="Texture2D" uid="uid://cnxyxrfjavf2g" path="res://Assets/Hub/moneda.png" id="2_rqqsa"]
+[ext_resource type="Texture2D" uid="uid://dbw17gxab3v4k" path="res://Assets/inventario/lata.png" id="3_rqqsa"]
+[ext_resource type="Texture2D" uid="uid://0bgkvw5fy55u" path="res://Assets/inventario/hueso.png" id="4_2b8me"]
+[ext_resource type="Texture2D" uid="uid://ecpl3rhpnc30" path="res://Assets/inventario/trapo.png" id="5_xovc8"]
+[ext_resource type="Texture2D" uid="uid://b6gkuroqu48p5" path="res://Assets/inventario/botella.png" id="6_n6j2l"]
+[ext_resource type="Texture2D" uid="uid://c2dtm5mwb73hj" path="res://Assets/inventario/garra.png" id="7_pmuii"]
+[ext_resource type="Texture2D" uid="uid://cwefah3b44bs2" path="res://Assets/inventario/colmillo.png" id="8_qe75c"]
+[ext_resource type="Texture2D" uid="uid://drojxyi2ng15u" path="res://Assets/inventario/escama.png" id="9_et8ar"]
+[ext_resource type="Texture2D" uid="uid://f6cbct3cabuy" path="res://Assets/inventario/cristal_oscuro.png" id="10_2ufmu"]
 
 [sub_resource type="Animation" id="Animation_p0im4"]
 resource_name = "Mostrar"
@@ -71,93 +79,121 @@ autowrap_mode = 2
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = 37.0
 offset_top = 25.0
-offset_right = 294.0
-offset_bottom = 52.0
+offset_right = 499.0
+offset_bottom = 95.0
 theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = -237.0
 offset_top = 125.0
 offset_right = -12.0
-offset_bottom = 364.0
+offset_bottom = 623.0
+theme_override_constants/separation = 15
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
 text = "Inventario"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer"]
+position = Vector2(3, -4)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_rqqsa")
 
 [node name="Lata" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer2"]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("4_2b8me")
 
 [node name="Hueso" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer3"]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("5_xovc8")
 
 [node name="Trapo" type="Label" parent="VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer4"]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("6_n6j2l")
 
 [node name="Botella" type="Label" parent="VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer5"]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("7_pmuii")
 
 [node name="Garra" type="Label" parent="VBoxContainer/HBoxContainer5"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer6"]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("8_qe75c")
 
 [node name="Colmillo" type="Label" parent="VBoxContainer/HBoxContainer6"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer7"]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("9_et8ar")
 
 [node name="Escama" type="Label" parent="VBoxContainer/HBoxContainer7"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer8"]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("10_2ufmu")
 
 [node name="Cristal Oscuro" type="Label" parent="VBoxContainer/HBoxContainer8"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.42965, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
