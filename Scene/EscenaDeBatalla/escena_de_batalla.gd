@@ -6,6 +6,9 @@ extends Node2D
 @onready var legendario: AudioStreamPlayer2D = $Legendario
 @onready var nombre: Label = $Nombre
 @onready var rareza: Label = $rareza
+@onready var cartel: Panel = $CARTEL
+@onready var mensaje: RichTextLabel = $CARTEL/MENSAJE
+
 
 var EnemigoActivo:bool=false
 @onready var vida: Label = $ProgressBar/Vida
@@ -16,8 +19,12 @@ func _ready() -> void:
 	terminoeldialogo=true
 
 func _process(delta: float) -> void:
-	if PlayerStats.Alimentacion==0:
+	if PlayerStats.Alimentacion<=0:
 		PlayerStats.reiniciarStats()
+		mensaje.text = "[center][b][color=red]¡Has sido derrotado![/color][/b]\nTus fuerzas han caído en el combate...\nEl enemigo ha vencido y deberás comenzar de nuevo.\n\n[i]A veces, perder es parte del camino.[/i][/center]"
+		cartel.visible = true
+		recibe_ataque.stop()
+		await get_tree().create_timer(3.5).timeout
 		get_tree().change_scene_to_file("res://Scene/Menu/menu.tscn")
 	if !terminoeldialogo:
 		return
@@ -47,6 +54,9 @@ func _on_atacar_pressed() -> void:
 	if EnemigosStats.SaludActual<=0:
 		recibe_ataque.stop()
 		EnemigosStats.morir()
+		mensaje.text = "[center][b]¡Victoria![/b]\nHas derrotado a [color=orange]" + EnemigosStats.Nombre + "[/color].\n\nObtienes: [color=yellow]" + PlayerStats.obj + "[/color]\nExp: [color=green]" + str(EnemigosStats.ExpOfrecida) + "[/color][/center]"
+		cartel.visible = true
+		await get_tree().create_timer(3.5).timeout
 		legendario.stop()
 		get_tree().change_scene_to_file("res://Scene/Mundo1/mundo_1.tscn")
 
@@ -60,4 +70,7 @@ func _on_recibe_ataque_timeout() -> void:
 func _on_button_pressed() -> void:
 	legendario.stop()
 	recibe_ataque.stop()
+	mensaje.text = "[center][b][color=orange]¡Has huido del combate![/color][/b]\nHas evitado la derrota... por ahora.\nPero no todo se gana sin luchar.[/center]"
+	cartel.visible = true
+	await get_tree().create_timer(3.5).timeout
 	get_tree().change_scene_to_file("res://Scene/Mundo1/mundo_1.tscn")

@@ -3,38 +3,44 @@
 Gatita Chef: Ey... Si buscas comida, yo podría darte una patita.
 Gatita Chef: ¿Por qué no le échas un vistazo?
 - Muéstrame lo que tienes.
-	Gatita Chef : Tienes[color=yellow] {{PlayerStats.MichiMonedas}} MichiMonedas[/color].
+	Gatita Chef : Tienes[color=yellow] {{PlayerStats.Monedas}} MichiMonedas[/color].
 	Gatita Chef: ¿Qué te gustaría comprar?
-	- Michigalletas X 3 MichiMonedas
-		do PlayerStats.Curar(5) 
-		set PlayerStats.Monedas -= 5
-		=> Saludo_Chef
-	- Pescaditos Deliciosos X 10 MichiMonedas
-		set PlayerStats.MichiMonedas -= 10
-		do PlayerStats.Curar(10)
-		=> Saludo_Chef
-	- Sobre de Mhiskas X 30 MichiMonedas
-		set PlayerStats.MichiMonedas -= 30
-		do PlayerStats.Curar(15)
-		=> Saludo_Chef
-	- SuperMichi Dulce X 50 MichiMonedas
-		set PlayerStats.MichiMonedas -= 50
-		do PlayerStats.Curar(20)
-		=> Saludo_Chef
+	- Michigalletas X 3 MM
+		if PlayerStats.Monedas>5
+			do PlayerStats.Curar(10) 
+			set PlayerStats.Monedas -= 5
+			=> Saludo_Chef
+		=> Saludo_No
+
+	- Pescaditos Deliciosos X 10 MM
+		if PlayerStats.Monedas>10
+			set PlayerStats.Monedas -= 10
+			do PlayerStats.Curar(20)
+			=> Saludo_Chef
+		=> Saludo_No
+	- Sobre de Mhiskas X 30 MM
+		if PlayerStats.Monedas>30
+			set PlayerStats.Monedas -= 30
+			do PlayerStats.Curar(50)
+			=> Saludo_Chef
+		=> Saludo_No
+	- SuperMichi Dulce X 50 MM
+		if PlayerStats.Monedas>50
+			set PlayerStats.Monedas -= 50
+			do PlayerStats.Curar(100)
+			=> Saludo_Chef
+		=> Saludo_No
 - No tengo mucha hambre ahora. 
 	=> Saludo_No
 
 ~ Saludo_No
-Gatita Chef: Esta bien...
-Gatita Chef: Ya sabes dónde encontrarme.
-=> END
-
-~ Negacion_Plata
-Gatita Chef: Uhm...
-Gatita Chef: Parece que no tienes suficiente.
+%50 Gatita Chef: No tienes suficientes Michimonedas, Esta bien... no todos los dias son buenos en Meowfia
+%50 Gatita Chef: Mmm... No te preocupes, cuando tengas michimonedas, ya sabes dónde encontrarme.
 {{PlayerStats.Nombre}}: Oh...
 {{PlayerStats.Nombre}}: Volvere luego.
-=> Saludo_No
+=> END
+
+
 
 ~ Saludo_Chef
 %25 Gatita Chef: ¡Que lo disfrutes!

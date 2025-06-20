@@ -6,9 +6,11 @@ extends Control
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var cartel_nombre: Control = $Ingresa
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var aceptar: Button = $Ingresa/Aceptar
 
 
 func _ready():
+	aceptar.disabled=false
 	animation_player.play("modulacion")
 	start.disabled=false
 	salir.disabled=false
@@ -28,11 +30,13 @@ func _ready():
 
 func _on_aceptar_pressed() -> void:
 	if ingrese_nombre.text != null:
+		aceptar.disabled=true
 		audio_stream_player_2d.play()
 		await audio_stream_player_2d.finished
 		PlayerStats.Nombre=ingrese_nombre.text
 		print(PlayerStats.Nombre)
 		get_tree().change_scene_to_file("res://Scene/Mundo1/mundo_1.tscn")
+		
 
 
 

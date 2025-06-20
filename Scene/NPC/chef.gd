@@ -24,7 +24,7 @@ func Hablar():
 		NpcDialogo.TutoNext()
 	else:
 		audio_stream_player_2d.play()
-		DialogueManager.show_dialogue_balloon(NpcDialogo.BdialComerciar,"Iniciar_Tradeo")
+		DialogueManager.show_dialogue_balloon(NpcDialogo.BdialChef,"Introduccion_Chef")
 		await DialogueManager.dialogue_ended
 	
 	Speak = false
